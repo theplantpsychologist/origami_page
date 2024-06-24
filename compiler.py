@@ -18,16 +18,15 @@ from datetime import datetime
 
 def get_filenames():
     model_data = {}
-
-    mypath = "models"
+    mypath = "src/models/"
     filenames = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     for i in range(len(filenames)):
-        filenames[i] = "models/" + filenames[i]
+        filenames[i] =filenames[i]
 
     model_data["filenames"] = filenames
     all_tags = set()
     for filename in filenames:
-        with open(filename, "r") as file:
+        with open(mypath+filename, "r") as file:
             data = json.load(file)
             if "tags" in data:
                 all_tags.update(data["tags"])
@@ -165,6 +164,6 @@ def build_html_files():
     print("All HTML files built successfully.")
 
 if __name__ == "__main__":
-    build_html_files()
+    get_filenames()
 
 #right now tags are all weighted same. could have specific categories to put in the json files (like lang) so the user can sort by subject, design style, etc

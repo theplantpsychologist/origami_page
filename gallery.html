@@ -2,7 +2,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Gallery</title>
+    <style>
+        img {
+            max-width: 200px;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -18,14 +23,75 @@
                 display the models from the queue into model_gallery. For each display:
                     load the thumbnail as a link. When hovered, the model name appears
                     when clicked, link to gallery/model.html with the model name as a parameter
+
+            To do in gallery.html:
+             - add filter UI and sort UI
+             - make the models appear in neat columns
         */
+        //To be defined once
+        async function fetchFile(filename) {
+            return fetch(filename)
+                .then(response => response.json())
+                .catch(error => console.error('Error:', error));
+        }
+        function display(queue,displayCP = false){
+            for(const [filename,model] of queue){
+                const modelGallery = document.getElementById('model_gallery');
+                const modelDiv = document.createElement('div');
+                modelDiv.classList.add('model');
+                modelGallery.appendChild(modelDiv);
 
+                const modelLink = document.createElement('a');
+                modelLink.href = `gallery/${filename.slice(0, -5)}.html`;
+                modelDiv.appendChild(modelLink);
+
+                const modelThumbnail = document.createElement('img');
+                modelThumbnail.src = !displayCP?"src/thumbnails/"+model.photo[0]:"src/cps/"+model.cp[0];
+                modelThumbnail.alt = model.name;
+                modelLink.appendChild(modelThumbnail);
+                // const modelName = document.createElement('p');
+                // modelName.textContent = model.name;
+                // modelLink.appendChild(modelName);
+            }
+        }
+
+        async function search(){
+            console.log("refreshing search")
+            const modelGallery = document.getElementById('model_gallery');
+            while (modelGallery.firstChild) {
+                modelGallery.removeChild(modelGallery.firstChild);
+            }
+            function filter(model){
+                // TODO: implement filter here. based on the user filters
+                //True: model gets added to queue
+                return model.name != ""
+            }
+
+            model_data = await fetchFile("model_data.json");
+            queue = []
+            for (const filename of model_data.filenames){
+                model = await fetchFile("src/models/"+filename);
+                if(filter(model)){
+                    queue.push([filename,model])
+                }
+            }
+            display(queue);
+        }
     </script>
-    <div id="filters">
 
+    <h1>Gallery</h1>
+    <p>this is gallery of all models</p>
+    <div id="user_controls">
+        <button id="search" onclick="search()">Search</button>
+    </div>
     </div>
     <div id="model_gallery">
-
     </div>
+
+
+    <script>
+        //default loadup
+        search();
+    </script>
 </body>
 </html>
