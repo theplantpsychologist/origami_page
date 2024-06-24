@@ -1,0 +1,10 @@
+src: the folder where all the user inputs go.
+
+For each model, add a json file to the models folder, along with photos and cps as applicable.
+
+Thumbnails will be generated automatically
+
+When ready to publish, run compiler.py, which will go through each json file.
+For each json file, 
+    clone template.html and put it in gallery
+    update the title, description, photos, cp, etc based on the data from the json

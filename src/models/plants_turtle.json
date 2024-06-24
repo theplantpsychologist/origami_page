@@ -1,0 +1,10 @@
+{
+    "name":"Plant's Turtle",
+    "year":2015,
+    "photo":"photos/photo.jpg",
+    "thumbnail":null,
+    "cp":null,
+    "tags":["simple","bp","animal"],
+    "description":"beginner friendly cp. lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "video":"https://www.youtube.com/watch?v=LL2d1WjBTR4"
+}
