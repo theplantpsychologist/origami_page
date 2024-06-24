@@ -1,10 +1,12 @@
 {
     "name":"",
-    "year":2024,
-    "photo":"photos/",
-    "thumbnail":null,
-    "cp":null,
+    "date":"2024-06-01",
+    "photo":[""],
     "tags":[],
     "description":"",
-    "video":null
+    "cp":[],
+    "video":null,
+    "diagrams":["",""],
+    "cpdescription":"",
+    "thumbnail":null
 }

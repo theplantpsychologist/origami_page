@@ -1,0 +1,12 @@
+{
+    "name":"Boba",
+    "date":"2021-12-01",
+    "photo":["boba.jpg"],
+    "thumbnail":null,
+    "description":"Designed as a gift",
+    "cp":["boba cp.jpg"],
+    "cpdescription":"",
+    "video":null,
+    "diagrams":["",""],
+    "tags":["color change", "bp","nonuniaxial", "object"]
+}

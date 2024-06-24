@@ -8,3 +8,24 @@ When ready to publish, run compiler.py, which will go through each json file.
 For each json file, 
     clone template.html and put it in gallery
     update the title, description, photos, cp, etc based on the data from the json
+
+template comments:
+ - name: name of the model. will be name of the html file too
+ - date: format as ISO "2019-03-06" or short ""03/06/2019". put whatever for the day, probably only month and year will be displayed
+ - photos: list of photos to display, in order
+ - thumbnail: which photo to be used as thumbnail. If null, the first photo in photos will be used
+ - description: description of the model
+ - cp: cp file(s)
+ - cpdescription: comments about structure
+ - video: an associated video, if applicable. usually a youtube link
+ - diagrams: if available: link and display name
+ - tags: make sure to include subject type (animal, human, object, other), design style (uniaxial, nonuniaxial, hp, bp, 22.5, 15, other, color change), status (signature, flagship, simple, complex, bottom shelf)
+
+User filters:
+    - has cp (may be able to display cps instead of models)
+    - subject type: animals, humans, other
+
+Lang's website builds an html page for each tag. although the gallery page usually just filters.
+    number of columns is determined by screen width (mobile friendly)
+
+later: go through google photos and download models that aren't here
