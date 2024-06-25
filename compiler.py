@@ -142,7 +142,7 @@ def build_html_files():
                     if data["video"]:
                         video_div = html_content.find('<div id="video">')
                         if video_div != -1:
-                            html_content = html_content[:video_div] + f"""<iframe width="560" height="315" src="https://www.youtube.com/embed/{data["video"][17:]}?si=u_yWkDzkLtn0nOf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>""" + html_content[video_div:]
+                            html_content = html_content[:video_div] + f"""<iframe width="560" height="315" src="https://www.youtube.com/embed/{data["video"][27:] if "shorts" in data["video"] else data["video"][17:]}?si=u_yWkDzkLtn0nOf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>""" + html_content[video_div:]
 
                     #fill in diagrams
                     if data["diagrams"][0]:
