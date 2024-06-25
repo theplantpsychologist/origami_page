@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Cockatiel",
+    "date":"2023-08-01",
+    "photo":["cockatiel.png"],
     "thumbnail":null,
-    "description":"",
-    "cp":[],
+    "description":"Designed while in Japan, after participating in a \"15 minute design challenge\" with University of Tokyo's \"Orist\" origami club. The design has been improved to become mostly irrecognizable from the original 15 minute test fold.",
+    "cp":["cockatiel cp.svg"],
     "cpdescription":"",
-    "video":null,
+    "video":"https://youtube.com/shorts/eod97x7Zg9I",
     "diagrams":["",""],
-    "tags":[]
+    "tags":["bp","nonuniaxial","color change","animal","bird"]
 }

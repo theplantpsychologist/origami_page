@@ -26,15 +26,17 @@
 
             To do in gallery.html:
              - add filter UI and sort UI
+                - tags, also year, has cp, has video, etc
              - make the models appear in neat columns
         */
-        //To be defined once
+        //helper
         async function fetchFile(filename) {
             return fetch(filename)
                 .then(response => response.json())
                 .catch(error => console.error('Error:', error));
         }
         function display(queue,displayCP = false){
+            console.log(queue.length, "models found") //later write this to the html
             for(const [filename,model] of queue){
                 const modelGallery = document.getElementById('model_gallery');
                 const modelDiv = document.createElement('div');
@@ -82,7 +84,7 @@
     <h1>Gallery</h1>
     <p>this is gallery of all models</p>
     <div id="user_controls">
-        <button id="search" onclick="search()">Search</button>
+        <button id="search" onclick="await search()">Search</button>
     </div>
     </div>
     <div id="model_gallery">

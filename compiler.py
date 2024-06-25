@@ -167,3 +167,7 @@ if __name__ == "__main__":
     get_filenames()
 
 #right now tags are all weighted same. could have specific categories to put in the json files (like lang) so the user can sort by subject, design style, etc
+
+#TODO: in the photos div, make a carousel for the models with multiple photos
+
+#TODO: add handling for embedding shorts

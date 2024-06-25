@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Japanese Spider Crab",
+    "date":"2020-12-01",
+    "photo":["crab.jpg"],
     "thumbnail":null,
-    "description":"",
+    "description":"A proof of concept for an algorithm for converting circle packing into box pleating.",
     "cp":[],
     "cpdescription":"",
-    "video":null,
+    "video":"https://youtu.be/TpGoVjnt0ZA",
     "diagrams":["",""],
-    "tags":[]
+    "tags":["bp","uniaxial","animal","sea life"]
 }
