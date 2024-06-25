@@ -28,6 +28,8 @@
              - add filter UI and sort UI
                 - tags, also year, has cp, has video, etc
              - make the models appear in neat columns
+
+            Note: sometimes the json files don't update because the old versions are cached in the local browser. make sure the deployed version doesn't have this issue. for testing, use incognito
         */
         //helper
         async function fetchFile(filename) {
@@ -68,6 +70,11 @@
                 //True: model gets added to queue
                 return model.name != ""
             }
+            function sort(queue){
+                //inputs a queue and sorts based on user input
+                //TODO: read user sorting input
+                return queue.sort((a, b) => new Date(b[1].date) - new Date(a[1].date))
+            }
 
             model_data = await fetchFile("model_data.json");
             queue = []
@@ -77,14 +84,14 @@
                     queue.push([filename,model])
                 }
             }
-            display(queue);
+            display(sort(queue));
         }
     </script>
 
     <h1>Gallery</h1>
     <p>this is gallery of all models</p>
     <div id="user_controls">
-        <button id="search" onclick="await search()">Search</button>
+        <button id="search" onclick="search()">Search</button>
     </div>
     </div>
     <div id="model_gallery">
