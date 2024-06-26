@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Baby Elephant",
+    "date":"2021-07-01",
+    "photo":["elephant-3.jpg"],
     "thumbnail":null,
     "description":"",
-    "cp":[],
-    "cpdescription":"",
+    "cp":["elephant cp.svg"],
+    "cpdescription":"This could be considered analagous to tilted grid but with hex pleating. Generally, hex pleating doesn't do so well with diagonal symmetry in a square, because none of the edges will lie on grid points. However, in this case, diagonal symmetry is the most efficient due to the long trunk. <br><br> To fold the grid, divide the diagonal into 18ths.",
     "video":null,
     "diagrams":["",""],
-    "tags":[]
+    "tags":["hp","nonuniaxial","cute","animal","mammal","tilted grid"]
 }

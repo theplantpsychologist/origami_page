@@ -165,7 +165,7 @@ def build_html_files():
 
 if __name__ == "__main__":
     get_filenames()
-    # compress_photos()
+    #compress_photos()
     build_html_files()
 
 #right now tags are all weighted same. could have specific categories to put in the json files (like lang) so the user can sort by subject, design style, etc

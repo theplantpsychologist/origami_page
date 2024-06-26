@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Dodo",
+    "date":"2023-11-01",
+    "photo":["dodo-3.jpg"],
     "thumbnail":null,
-    "description":"",
-    "cp":[],
+    "description":"Originally the result of a 15 minute design challenge during an OrigaMIT meeting. The model stands up on its own",
+    "cp":["dodo cp.svg"],
     "cpdescription":"",
     "video":null,
     "diagrams":["",""],
-    "tags":[]
+    "tags":["bp","nonuniaxial","animal","bird","color change","simple"]
 }

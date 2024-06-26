@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Peace Dove",
+    "date":"2020-10-10",
+    "photo":["dove-2.jpg"],
     "thumbnail":null,
-    "description":"",
+    "description":"A dove holding an olive branch, inspired by the story of the flood in the Bible.",
     "cp":[],
-    "cpdescription":"",
+    "cpdescription":"Folded from a half-frog-half-bird base.",
     "video":null,
     "diagrams":["",""],
-    "tags":[]
+    "tags":["simple","bird","animal","22.5","color change"]
 }

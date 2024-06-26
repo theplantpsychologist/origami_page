@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Dodo Skeleton",
+    "date":"2020-05-01",
+    "photo":["dodo skeleton.JPG"],
     "thumbnail":null,
-    "description":"",
-    "cp":[],
-    "cpdescription":"",
+    "description":"My first skeleton design, folded from single tissue.",
+    "cp":["dodoskeletoncp.PNG"],
+    "cpdescription":"This cp is pretty straightforward, except for the ribs. Although the ribs look like center flaps, I find them easier to fold if you think of them as level shifters, and the rivers between the ribs are just a result of moving the pleats forward. Grid: 44x44",
     "video":null,
     "diagrams":["",""],
-    "tags":[]
+    "tags":["bp","uniaxial","animal","bird"]
 }

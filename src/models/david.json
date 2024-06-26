@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"If David Wore Pants",
+    "date":"2023-01-01",
+    "photo":["david.jpg","david close up.jpg"],
     "thumbnail":null,
-    "description":"",
+    "description":"Originally a generic human figure base, in collaboration with Boice Wong and Chris Conrad. I'm especially happy with the hand shaping.",
     "cp":[],
     "cpdescription":"",
     "video":null,
     "diagrams":["",""],
-    "tags":[]
+    "tags":["human","portfolio","bp","uniaxial"]
 }
