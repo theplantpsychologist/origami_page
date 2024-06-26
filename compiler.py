@@ -109,12 +109,16 @@ def build_html_files():
                     html_content = html_file.read()
                     html_content = html_content.replace('<h1 id="name">name</h1>', f'<h1 id="name">{data["name"]}</h1>')
 
-                    # Get the month and year from the ISO date
-                    iso_date = data["date"]
-                    date_obj = datetime.fromisoformat(iso_date)
-                    month = date_obj.strftime("%B")
-                    year = date_obj.strftime("%Y")
-                    html_content = html_content.replace('<p id="date">date</p>', f'<p id="date">{month} {year}</p>')
+                    try:
+                        # Get the month and year from the ISO date
+                        iso_date = data["date"]
+                        date_obj = datetime.fromisoformat(iso_date)
+                        month = date_obj.strftime("%B")
+                        year = date_obj.strftime("%Y")
+                        html_content = html_content.replace('<p id="date">date</p>', f'<p id="date">{month} {year}</p>')
+                    except:
+                        print("ERROR: "+filename + " has no date")
+                    
 
                     #fill in model description
                     html_content = html_content.replace('<p id="description">description</p>', f'<p id="description">{data["description"]}</p>')

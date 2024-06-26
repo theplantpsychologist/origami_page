@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Fight or Flight",
+    "date":"2019-01-01",
+    "photo":["fight or flight.JPG"],
     "thumbnail":null,
     "description":"",
     "cp":[],
     "cpdescription":"",
     "video":null,
     "diagrams":["",""],
-    "tags":[]
+    "tags":["human","multi subject","bp","uniaxial"]
 }

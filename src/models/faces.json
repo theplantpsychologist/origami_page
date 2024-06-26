@@ -1,12 +1,12 @@
 {
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
+    "name":"Faces",
+    "date":"2021-01-01",
+    "photo":["karen.jpg","faces.jpg"],
     "thumbnail":null,
-    "description":"",
-    "cp":[],
+    "description":"Some face experiments, with a structure able to be implemented into full human figure designs.",
+    "cp":["karen cp.png"],
     "cpdescription":"",
     "video":null,
     "diagrams":["",""],
-    "tags":[]
+    "tags":["human","bp","uniaxial"]
 }
