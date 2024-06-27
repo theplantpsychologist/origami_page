@@ -1,12 +1,1 @@
-{
-    "name":"Flutist",
-    "date":"2020-12-01",
-    "photo":["flutist-8.jpg"],
-    "thumbnail":null,
-    "description":"Designed as a commission for a sheet music publisher.",
-    "cp":["flutist cp.png"],
-    "cpdescription":"",
-    "video":null,
-    "diagrams":["",""],
-    "tags":["human","color change","uniaxial","bp","commission"]
-}
+{"name": "Flutist", "date": "2020-12-01", "photo": ["flutist-8.jpg"], "thumbnail": null, "description": "Designed as a commission for a sheet music publisher.", "cp": ["flutist cp.png"], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": ["human", "color_change", "uniaxial", "bp", "commission", "has_cp", "2020"]}

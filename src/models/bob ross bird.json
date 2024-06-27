@@ -1,12 +1,1 @@
-{
-    "name":"Bird",
-    "date":"2020-06-01",
-    "photo":["bird.png"],
-    "thumbnail":null,
-    "description":"This model, my first 22.5 design, was designed for a Bob Ross parody video.",
-    "cp":["bird cp.png"],
-    "cpdescription":"The crease pattern is a bird base with a smaller bird base grafted in the corner.",
-    "video":"https://youtu.be/NWlvNuXQufo",
-    "diagrams":["",""],
-    "tags":["22.5","bird","animal","simple"]
-}
+{"name": "Bird", "date": "2020-06-01", "photo": ["bird.png"], "thumbnail": null, "description": "This model, my first 22.5 design, was designed for a Bob Ross parody video.", "cp": ["bird cp.png"], "cpdescription": "The crease pattern is a bird base with a smaller bird base grafted in the corner.", "video": "https://youtu.be/NWlvNuXQufo", "diagrams": ["", ""], "tags": ["22.5", "bird", "animal", "simple", "has_cp", "has_video", "2020"]}

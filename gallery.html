@@ -39,10 +39,17 @@
         }
         function display(queue,displayCP = false){
             console.log(queue.length, "models found") //later write this to the html
+            const modelGallery = document.getElementById('model_gallery');
+            const modelCount = document.createElement('i');
+            modelCount.textContent = "Models found: "+queue.length;
+            modelGallery.appendChild(modelCount);
+
             for(const [filename,model] of queue){
-                const modelGallery = document.getElementById('model_gallery');
                 const modelDiv = document.createElement('div');
                 modelDiv.classList.add('model');
+                for(const tag of model.tags){
+                    modelDiv.classList.add(tag);
+                }
                 modelGallery.appendChild(modelDiv);
 
                 const modelLink = document.createElement('a');
@@ -59,39 +66,53 @@
             }
         }
 
-        async function search(){
+        async function search(tags=[],sort="date",displayCP=false){
             console.log("refreshing search.")
             const modelGallery = document.getElementById('model_gallery');
             while (modelGallery.firstChild) {
                 modelGallery.removeChild(modelGallery.firstChild);
             }
-            function filter(model){
-                // TODO: implement filter here. based on the user filters
+            function filter(model,tags){
+                // check if all tags are present
                 //True: model gets added to queue
+                for(const tag of tags){
+                    if(!model.tags.includes(tag)){
+                        return false;
+                    }
+                }
                 return model.name != ""
             }
-            function sort(queue){
+            function sort(queue,sort="date"){
                 //inputs a queue and sorts based on user input
                 //TODO: read user sorting input
-                return queue.sort((a, b) => new Date(b[1].date) - new Date(a[1].date))
+                if (sort == "date"){
+                    return queue.sort((a, b) => new Date(b[1].date) - new Date(a[1].date))
+                }
+                if (sort =="alphabetical"){
+                    return queue.sort((a, b) => a[1].name.localeCompare(b[1].name))
+                }
             }
 
             model_data = await fetchFile("model_data.json");
             queue = []
             for (const filename of model_data.filenames){
                 model = await fetchFile("src/models/"+filename);
-                if(filter(model)){
+                if(filter(model,tags)){
                     queue.push([filename,model])
                 }
             }
-            display(sort(queue));
+            display(sort(queue),displayCP);
         }
     </script>
 
     <h1>Gallery</h1>
     <p>this is gallery of all models</p>
     <div id="user_controls">
-        <button id="search" onclick="search()">Search</button>
+        <button id="search_all" onclick="search([])">All</button>
+        <button id="search_portfolio" onclick="search(['portfolio'])">Portfolio</button>
+        <button id="search_cps" onclick="search(['has_cp'],'date',true)">Display Crease Patterns</button>
+        <button id="search_human" onclick="search(['human'])">Human Figures</button>
+        <button id="search_animal" onclick="search(['animal'])">Animals</button>
     </div>
     </div>
     <div id="model_gallery">
@@ -100,7 +121,13 @@
 
     <script>
         //default loadup
-        search();
+        search([]);
+
+
+        /*
+        If no models found, display "no models found"
+        
+        */
     </script>
 </body>
 </html>

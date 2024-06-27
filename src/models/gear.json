@@ -1,12 +1,1 @@
-{
-    "name":"",
-    "date":null,
-    "photo":["photos/"],
-    "thumbnail":null,
-    "description":"",
-    "cp":[],
-    "cpdescription":"",
-    "video":null,
-    "diagrams":["",""],
-    "tags":[]
-}
+{"name": "Gear", "date": null, "photo": ["photos/"], "thumbnail": null, "description": "", "cp": [], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": []}

@@ -22,27 +22,42 @@ def get_filenames():
     filenames = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     for i in range(len(filenames)):
         filenames[i] =filenames[i]
-
     model_data["filenames"] = filenames
-    all_tags = set()
+
+
+    all_tags = {}
     for filename in filenames:
         with open(mypath+filename, "r") as file:
             data = json.load(file)
-            if "tags" in data:
-                all_tags.update(data["tags"])
-            else:
-                data["tags"] = []
-    model_data["tags"] = list(all_tags)
+
+            #modify tags as needed
+            data["tags"] = [tag.replace(" ", "_") for tag in data["tags"]]
+            if data["cp"] and "has_cp" not in data["tags"]:
+                data["tags"].append("has_cp")
+            if data["video"] and "has_video" not in data["tags"]:
+                data["tags"].append("has_video")
+            if data["diagrams"][0] and "has_diagrams" not in data["tags"]:
+                data["tags"].append("has_diagrams")
+            try:
+                year = datetime.fromisoformat(data["date"]).strftime("%Y")
+                if year not in data["tags"]:
+                    data["tags"].append(year)
+            except: #if there's no year, don't care
+                pass
+            for tag in data["tags"]:
+                all_tags[tag] = all_tags.get(tag, 0) + 1
+            with open(mypath+filename,'w') as file:
+                json.dump(data,file)
+
+
+    model_data["tags"] = all_tags#list(all_tags)
     # Convert the list to JSON format
     json_data = json.dumps(model_data)
-
     # Specify the file path for the JSON file
     json_file_path = "/Users/brandonwong/Desktop/portfolio/model_data.json"
-
     # Write the JSON data to the file
     with open(json_file_path, "w") as json_file:
         json_file.write(json_data)
-
     print("Filenames saved as JSON successfully.")
 
 def compress_photos():

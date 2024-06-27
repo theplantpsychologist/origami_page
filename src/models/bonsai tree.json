@@ -1,12 +1,1 @@
-{
-    "name":"Bonsai Tree",
-    "date":"2020-03-01",
-    "photo":["bonsai tree.jpg"],
-    "thumbnail":null,
-    "description":"",
-    "cp":["bonsai cp.png"],
-    "cpdescription":"",
-    "video":null,
-    "diagrams":["",""],
-    "tags":["bp","color change","plant","uniaxial"]
-}
+{"name": "Bonsai Tree", "date": "2020-03-01", "photo": ["bonsai tree.jpg"], "thumbnail": null, "description": "", "cp": ["bonsai cp.png"], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": ["bp", "color_change", "plant", "uniaxial", "has_cp", "2020"]}

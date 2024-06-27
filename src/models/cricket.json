@@ -1,12 +1,1 @@
-{
-    "name":"Cricket",
-    "date":"2021-02-01",
-    "photo":["cricket white-2.jpg","cricket green-4.jpg"],
-    "thumbnail":null,
-    "description":"A rare 15 degree design.",
-    "cp":["cricket cp.png"],
-    "cpdescription":"",
-    "video":null,
-    "diagrams":["",""],
-    "tags":["15","uniaxial","animal","insect"]
-}
+{"name": "Cricket", "date": "2021-02-01", "photo": ["cricket white-2.jpg", "cricket green-4.jpg"], "thumbnail": null, "description": "A rare 15 degree design.", "cp": ["cricket cp.png"], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": ["15", "uniaxial", "animal", "insect", "has_cp", "2021"]}

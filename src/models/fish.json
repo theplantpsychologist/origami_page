@@ -1,12 +1,1 @@
-{
-    "name":"Fish",
-    "date":"2021-02-01",
-    "photo":["figh tg.jpg"],
-    "thumbnail":null,
-    "description":"A very efficient fish, but a bit plain/generic.",
-    "cp":["fish cp.png"],
-    "cpdescription":"Uses a similar structure as <a href=\"./portfolio/divine boar.html\">Divine Boar</a>.",
-    "video":null,
-    "diagrams":["",""],
-    "tags":["animal","fish","tilted grid"]
-}
+{"name": "Fish", "date": "2021-02-01", "photo": ["fish tg.jpg"], "thumbnail": null, "description": "A very efficient fish, but a bit plain/generic.", "cp": ["fish cp.png"], "cpdescription": "Uses a similar structure as <a href=\"./portfolio/divine boar.html\">Divine Boar</a>.", "video": null, "diagrams": ["", ""], "tags": ["animal", "fish", "tilted_grid", "has_cp", "2021"]}

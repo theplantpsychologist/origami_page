@@ -1,12 +1,1 @@
-{
-    "name":"Bison",
-    "date":"2021-01-01",
-    "photo":["bison.jpg"],
-    "thumbnail":"",
-    "description":"This was a proof of concept about tilted grid and unaxial box pleating, as a \"translation\" of <a href=\"https://www.flickr.com/photos/origami-artist-galen/28456060595\">Shuki Kato's bison</a> from a tilted grid into a normal grid.",
-    "cp":["bison cp.png"],
-    "cpdescription":"",
-    "video":"https://youtu.be/rnsL1Vz7y20",
-    "diagrams":["",""],
-    "tags":["bp","nonuniaxial","animal","mammal"]
-}
+{"name": "Bison", "date": "2021-01-01", "photo": ["bison.jpg"], "thumbnail": "", "description": "This was a proof of concept about tilted grid and unaxial box pleating, as a \"translation\" of <a href=\"https://www.flickr.com/photos/origami-artist-galen/28456060595\">Shuki Kato's bison</a> from a tilted grid into a normal grid.", "cp": ["bison cp.png"], "cpdescription": "", "video": "https://youtu.be/rnsL1Vz7y20", "diagrams": ["", ""], "tags": ["bp", "nonuniaxial", "animal", "mammal", "has_cp", "has_video", "2021"]}

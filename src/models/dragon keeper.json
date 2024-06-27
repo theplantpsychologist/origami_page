@@ -1,12 +1,1 @@
-{
-    "name":"Dragon Keeper",
-    "date":"2021-02-01",
-    "photo":["adventurer-7.jpg","adventurer-10.jpg"],
-    "thumbnail":null,
-    "description":"",
-    "cp":["dragon keeper cp.png"],
-    "cpdescription":"Each part of the model (the dragon, torch, hood, tunic, etc) was carefully test folded on its own and then packed into the square for the final fold.",
-    "video":"https://youtu.be/crBTc4_ZCNk",
-    "diagrams":["",""],
-    "tags":["bp","uniaxial","portfolio","animal","human","mythical","multi subject"]
-}
+{"name": "Dragon Keeper", "date": "2021-02-01", "photo": ["adventurer-7.jpg", "adventurer-10.jpg"], "thumbnail": null, "description": "", "cp": ["dragon keeper cp.png"], "cpdescription": "Each part of the model (the dragon, torch, hood, tunic, etc) was carefully test folded on its own and then packed into the square for the final fold.", "video": "https://youtu.be/crBTc4_ZCNk", "diagrams": ["", ""], "tags": ["bp", "uniaxial", "portfolio", "animal", "human", "mythical", "multi_subject", "has_cp", "has_video", "2021"]}
