@@ -1,1 +1,26 @@
-{"name": "Body Builder", "date": "2021-06-01", "photo": ["body builder.jpg"], "thumbnail": null, "description": "Designed for a proof of concept about tilted grid efficiency", "cp": ["bodybuilder cp.png"], "cpdescription": "", "video": "https://youtu.be/rnsL1Vz7y20", "diagrams": ["", ""], "tags": ["bp", "tilted_grid", "human", "has_cp", "has_video", "2021"]}
+{
+    "name": "Body Builder",
+    "date": "2021-06-01",
+    "photo": [
+        "body builder.jpg"
+    ],
+    "thumbnail": null,
+    "description": "Designed for a proof of concept about tilted grid efficiency",
+    "cp": [
+        "bodybuilder cp.png"
+    ],
+    "cpdescription": "",
+    "video": "https://youtu.be/rnsL1Vz7y20",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "bp",
+        "tilted_grid",
+        "human",
+        "has_cp",
+        "has_video",
+        "2021"
+    ]
+}

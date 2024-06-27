@@ -1,1 +1,25 @@
-{"name": "Grad cap", "date": null, "photo": ["photos/"], "thumbnail": null, "description": "", "cp": [], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": []}
+{
+    "name": "Grad cap",
+    "date": "2021-05-01",
+    "photo": [
+        "graduation cap.jpg"
+    ],
+    "thumbnail": null,
+    "description": "Designed when I graduated high school. To make it life size, use a 100cm square.",
+    "cp": [
+        "graduation cap cp.png"
+    ],
+    "cpdescription": "",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "object",
+        "nonuniaxial",
+        "bp",
+        "has_cp",
+        "2021"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Vegetables",
+    "date": "2020-06-01",
+    "photo": [
+        "plant's plantation.jpg",
+        "green onion.JPG"
+    ],
+    "thumbnail": null,
+    "description": "",
+    "cp": [],
+    "cpdescription": "",
+    "video": "https://youtu.be/9ZnRDKWTcS8",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": ["plant","nonuniaxial","22.5","bp"]
+}

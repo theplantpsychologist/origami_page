@@ -1,1 +1,26 @@
-{"name": "Faces", "date": "2021-01-01", "photo": ["karen.jpg", "faces.jpg"], "thumbnail": null, "description": "Some face experiments, with a structure able to be implemented into full human figure designs.", "cp": ["karen cp.png"], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": ["human", "bp", "uniaxial", "has_cp", "2021"]}
+{
+    "name": "Faces",
+    "date": "2021-01-01",
+    "photo": [
+        "karen.jpg",
+        "faces.jpg"
+    ],
+    "thumbnail": null,
+    "description": "Some face experiments, with a structure able to be implemented into full human figure designs.",
+    "cp": [
+        "karen cp.png"
+    ],
+    "cpdescription": "",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "human",
+        "bp",
+        "uniaxial",
+        "has_cp",
+        "2021"
+    ]
+}

@@ -1,1 +1,23 @@
-{"name": "Cat", "date": "2021-11-01", "photo": ["cat.jpg"], "thumbnail": null, "description": "", "cp": [], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": ["22.5", "animal", "mammal", "cute", "2021"]}
+{
+    "name": "Cat",
+    "date": "2021-11-01",
+    "photo": [
+        "cat.jpg"
+    ],
+    "thumbnail": null,
+    "description": "",
+    "cp": [],
+    "cpdescription": "",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "22.5",
+        "animal",
+        "mammal",
+        "cute",
+        "2021"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "name":"Knight HP 2",
+    "date":"2023-08-02",
+    "photo":["knighthp1.jpg","knighthp2.jpg"],
+    "tags":["human","color change","hp","uniaxial","portfolio"],
+    "description":"My submission to the 2023 Tanteidan convention's design contest. A \"last minute\" improvement of <a href='knight_hp1.html'>the previous HP knight</a>.",
+    "cp":["knight hp cp.svg"],
+    "video":null,
+    "diagrams":["",""],
+    "cpdescription":"",
+    "thumbnail":null
+}

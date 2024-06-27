@@ -1,1 +1,28 @@
-{"name": "Cardinal", "date": "2024-01-01", "photo": ["cardinal.jpg"], "thumbnail": null, "description": "", "cp": ["cardinal hp cp.svg"], "cpdescription": "The base is completely flat, and then the pleats in the belly are swung open.", "video": null, "diagrams": ["", ""], "tags": ["hp", "3d", "nonuniaxial", "animal", "bird", "color_change", "has_cp", "2024"]}
+{
+    "name": "Cardinal",
+    "date": "2024-01-01",
+    "photo": [
+        "cardinal.jpg"
+    ],
+    "thumbnail": null,
+    "description": "",
+    "cp": [
+        "cardinal hp cp.svg"
+    ],
+    "cpdescription": "The base is completely flat, and then the pleats in the belly are swung open.",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "hp",
+        "3d",
+        "nonuniaxial",
+        "animal",
+        "bird",
+        "color_change",
+        "has_cp",
+        "2024"
+    ]
+}

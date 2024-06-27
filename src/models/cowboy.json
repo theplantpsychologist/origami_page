@@ -1,1 +1,28 @@
-{"name": "Cowboy", "date": "2022-07-01", "photo": ["cowboy-9781.png"], "thumbnail": null, "description": "Designed for an online design contest.", "cp": ["cowboy cp.svg"], "cpdescription": "A 32 grid with partial 64ths. The main challenge was how to get the rider to connect to the horse with a \"closed\" back.", "video": null, "diagrams": ["", ""], "tags": ["human", "animal", "mammal", "bp", "uniaxial", "multi_subject", "has_cp", "2022"]}
+{
+    "name": "Cowboy",
+    "date": "2022-07-01",
+    "photo": [
+        "cowboy-9781.png"
+    ],
+    "thumbnail": null,
+    "description": "Designed for an online design contest.",
+    "cp": [
+        "cowboy cp.svg"
+    ],
+    "cpdescription": "A 32 grid with partial 64ths. The main challenge was how to get the rider to connect to the horse with a \"closed\" back.",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "human",
+        "animal",
+        "mammal",
+        "bp",
+        "uniaxial",
+        "multi_subject",
+        "has_cp",
+        "2022"
+    ]
+}

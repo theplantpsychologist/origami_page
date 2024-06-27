@@ -1,1 +1,27 @@
-{"name": "Family", "date": "2021-06-01", "photo": ["family-6.jpg", "family-5.jpg"], "thumbnail": null, "description": "A mom, dad, and child folded from a single square. Beyond the technical acheivement, I'm proud of the emotional resonance of this model.", "cp": [], "cpdescription": "Each parent is a separate axis (joined from shoulder to heel), and the child comes out from the dad's arm. <br><br>Grid: 48x48", "video": null, "diagrams": ["", ""], "tags": ["human", "multi_subject", "portfolio", "bp", "multiaxial", "nonuniaxial", "uniaxial", "2021"]}
+{
+    "name": "Family",
+    "date": "2021-06-01",
+    "photo": [
+        "family-6.jpg",
+        "family-5.jpg"
+    ],
+    "thumbnail": null,
+    "description": "A mom, dad, and child folded from a single square. Beyond the technical acheivement, I'm proud of the emotional resonance of this model.",
+    "cp": [],
+    "cpdescription": "Each parent is a separate axis (joined from shoulder to heel), and the child comes out from the dad's arm. <br><br>Grid: 48x48",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "human",
+        "multi_subject",
+        "portfolio",
+        "bp",
+        "multiaxial",
+        "nonuniaxial",
+        "uniaxial",
+        "2021"
+    ]
+}

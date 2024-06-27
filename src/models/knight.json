@@ -1,1 +1,17 @@
-{"name": "", "date": null, "photo": ["photos/"], "thumbnail": null, "description": "", "cp": [], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": []}
+{
+    "name": "Knight BP",
+    "date": "2020-10-01",
+    "photo": [
+        "knight final-5.jpg","knight final-4.jpg"
+    ],
+    "thumbnail": null,
+    "description": "",
+    "cp": ["knight cp.png"],
+    "cpdescription": "Photodiagrams for the helmet are available <a href='https://drive.google.com/file/d/15KmlFGRwykBLCD_wlhgzg0s7UwgjXsvB/view'>here</a>.",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": ["human","portfolio","color change","bp","uniaxial"]
+}

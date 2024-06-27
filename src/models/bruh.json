@@ -1,1 +1,28 @@
-{"name": "Bruh", "date": "2020-07-01", "photo": ["bruh.JPG"], "thumbnail": null, "description": "Bruh.", "cp": ["bruh cp.png"], "cpdescription": "", "video": "https://youtu.be/rJEaC-PzEPo", "diagrams": ["", ""], "tags": ["bp", "color_change", "nonuniaxial", "uniaxial", "other", "has_cp", "has_video", "2020"]}
+{
+    "name": "Bruh",
+    "date": "2020-07-01",
+    "photo": [
+        "bruh.JPG"
+    ],
+    "thumbnail": null,
+    "description": "Bruh.",
+    "cp": [
+        "bruh cp.png"
+    ],
+    "cpdescription": "",
+    "video": "https://youtu.be/rJEaC-PzEPo",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "bp",
+        "color_change",
+        "nonuniaxial",
+        "uniaxial",
+        "has_cp",
+        "has_video",
+        "2020",
+        "2d"
+    ]
+}

@@ -1,1 +1,19 @@
-{"name": "", "date": null, "photo": ["photos/"], "thumbnail": null, "description": "", "cp": [], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": []}
+{
+    "name": "龍神 (Long Shen/Ryujin)",
+    "date": "2020-07-01",
+    "photo": [
+        "longshen.jpg",
+        "long.png",
+        "shen.png"
+    ],
+    "thumbnail": null,
+    "description": "The Chinese/Japanese characters, meaning \"Dragon God\" (the same characters as Ryujin)",
+    "cp": [],
+    "cpdescription": "",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": ["color change","2d","mythical","uniaxial","nonuniaxial"]
+}

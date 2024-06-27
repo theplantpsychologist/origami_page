@@ -1,1 +1,29 @@
-{"name": "Grim Reaper", "date": null, "photo": ["photos/"], "thumbnail": null, "description": "", "cp": [], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": []}
+{
+    "name": "Grim Reaper",
+    "date": "2021-03-01",
+    "photo": [
+        "grim reaper final.jpg",
+        "grim reaper details.png"
+    ],
+    "thumbnail": null,
+    "description": "Folded from blank single tissue, painted with white acrylic on one side.",
+    "cp": [
+        "grim reaper cp.png"
+    ],
+    "cpdescription": "The body is a big center flap, and all the features are placed around the edge for easy color change.",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "mythical",
+        "human",
+        "portfolio",
+        "bp",
+        "uniaxial",
+        "color_change",
+        "has_cp",
+        "2021"
+    ]
+}

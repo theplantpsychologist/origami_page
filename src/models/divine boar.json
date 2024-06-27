@@ -1,1 +1,27 @@
-{"name": "Divine Boar", "date": "2021-02-01", "photo": ["divine boar-2.jpg"], "thumbnail": null, "description": "Designed as part of an online competition. Inspired by <a href=\"https://www.folders.jp/g/1999/9914.html\">Satoshi Kamiya's divine boar</a>.", "cp": ["divine boar cp.png"], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": ["animal", "mythical", "mammal", "tilted_grid", "nonuniaxial", "has_cp", "2021"]}
+{
+    "name": "Divine Boar",
+    "date": "2021-02-01",
+    "photo": [
+        "divine boar-2.jpg"
+    ],
+    "thumbnail": null,
+    "description": "Designed as part of an online competition. Inspired by <a href=\"https://www.folders.jp/g/1999/9914.html\">Satoshi Kamiya's divine boar</a>.",
+    "cp": [
+        "divine boar cp.png"
+    ],
+    "cpdescription": "",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": [
+        "animal",
+        "mythical",
+        "mammal",
+        "tilted_grid",
+        "nonuniaxial",
+        "has_cp",
+        "2021"
+    ]
+}

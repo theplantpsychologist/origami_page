@@ -44,12 +44,13 @@ def get_filenames():
                     data["tags"].append(year)
             except: #if there's no year, don't care
                 pass
+            with open(mypath+filename,'w') as file:
+                json.dump(data,file,indent=4)
+
             for tag in data["tags"]:
                 all_tags[tag] = all_tags.get(tag, 0) + 1
-            with open(mypath+filename,'w') as file:
-                json.dump(data,file)
-
-
+    
+    all_tags = sorted(all_tags.items(), key=lambda x: x[0])
     model_data["tags"] = all_tags#list(all_tags)
     # Convert the list to JSON format
     json_data = json.dumps(model_data)

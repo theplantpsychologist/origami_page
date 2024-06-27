@@ -1,1 +1,17 @@
-{"name": "", "date": null, "photo": ["photos/"], "thumbnail": null, "description": "", "cp": [], "cpdescription": "", "video": null, "diagrams": ["", ""], "tags": []}
+{
+    "name": "Lemonade",
+    "date": null,
+    "photo": [
+        "2021-10-01"
+    ],
+    "thumbnail": null,
+    "description": "Designed as part of an \"Inktober\" challenge",
+    "cp": ["lemonade cp.png"],
+    "cpdescription": "",
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "tags": ["object","color change","bp","nonuniaxial","inktober"]
+}
