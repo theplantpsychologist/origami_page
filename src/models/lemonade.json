@@ -6,12 +6,21 @@
     ],
     "thumbnail": null,
     "description": "Designed as part of an \"Inktober\" challenge",
-    "cp": ["lemonade cp.png"],
+    "cp": [
+        "lemonade cp.png"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": ["object","color change","bp","nonuniaxial","inktober"]
+    "tags": [
+        "object",
+        "color_change",
+        "bp",
+        "nonuniaxial",
+        "inktober",
+        "has_cp"
+    ]
 }

@@ -1,17 +1,30 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Penguin (tall)",
+    "date": "2022-11-01",
     "photo": [
-        "photos/"
+        "tall penguin.jpg"
     ],
     "thumbnail": null,
     "description": "",
-    "cp": [],
+    "cp": [
+        "tall penguin .jpg"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
-        "",
-        ""
+        "https://www.giladorigami.com/origami-database-book/4185/Tanteidan-28th-convention",
+        "Tanteidan 28th Convention"
     ],
-    "tags": []
+    "tags": [
+        "animal",
+        "bird",
+        "color_change",
+        "cute",
+        "sea_life",
+        "bp",
+        "nonuniaxial",
+        "has_cp",
+        "has_diagrams",
+        "2022"
+    ]
 }

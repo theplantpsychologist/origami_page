@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "MIT logo",
+    "date": "2021-08-01",
     "photo": [
-        "photos/"
+        "mit logo.jpg"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
-    "cpdescription": "",
+    "description": "The last thing I folded before leaving home for college.",
+    "cp": [
+        "mit cp.svg"
+    ],
+    "cpdescription": "Grid: 45x25",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "2d",
+        "color_change",
+        "bp",
+        "nonuniaxial",
+        "has_cp",
+        "2021"
+    ]
 }

@@ -1,11 +1,11 @@
 {
-    "name": "",
-    "date": null,
+    "name": "\u306d\u3053 (neko)",
+    "date": "2020-07-25",
     "photo": [
-        "photos/"
+        "neko.JPG"
     ],
     "thumbnail": null,
-    "description": "",
+    "description": "Japanese word for \"cat\"",
     "cp": [],
     "cpdescription": "",
     "video": null,
@@ -13,5 +13,10 @@
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "2d",
+        "color_change",
+        "bp",
+        "2020"
+    ]
 }

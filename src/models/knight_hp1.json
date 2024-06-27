@@ -1,12 +1,22 @@
 {
-    "name":"Knight HP 1",
-    "date":"2023-08-01",
-    "photo":["knighthp old.jpg"],
-    "tags":["human","hp","uniaxial"],
-    "description":"An initial draft of a knight made from hex pleating.",
-    "cp":[],
-    "video":null,
-    "diagrams":["",""],
-    "cpdescription":"",
-    "thumbnail":null
+    "name": "Knight HP 1",
+    "date": "2023-08-01",
+    "photo": [
+        "knighthp old.jpg"
+    ],
+    "tags": [
+        "human",
+        "hp",
+        "uniaxial",
+        "2023"
+    ],
+    "description": "An initial draft of a knight made from hex pleating.",
+    "cp": [],
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "thumbnail": null
 }

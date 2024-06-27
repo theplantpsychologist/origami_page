@@ -6,12 +6,23 @@
     ],
     "thumbnail": null,
     "description": "",
-    "cp": ["kangaroo cp.png"],
+    "cp": [
+        "kangaroo cp.png"
+    ],
     "cpdescription": "A very straightforward example of tilted grid.",
     "video": "https://youtu.be/rnsL1Vz7y20",
     "diagrams": [
         "",
         ""
     ],
-    "tags": ["animal","mammal","tilted grid","bp","nonuniaxial"]
+    "tags": [
+        "animal",
+        "mammal",
+        "tilted_grid",
+        "bp",
+        "nonuniaxial",
+        "has_cp",
+        "has_video",
+        "2021"
+    ]
 }

@@ -1,17 +1,25 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Penguin (old)",
+    "date": "2017-09-01",
     "photo": [
-        "photos/"
+        "penguin old2.JPG"
     ],
     "thumbnail": null,
     "description": "",
     "cp": [],
     "cpdescription": "",
-    "video": null,
+    "video": "https://youtu.be/zWyA34iRecI",
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "animal",
+        "bird",
+        "sea_life",
+        "bp",
+        "color_change",
+        "has_video",
+        "2017"
+    ]
 }

@@ -1,11 +1,11 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Music",
+    "date": "2021-10-01",
     "photo": [
-        "photos/"
+        "music.jpg"
     ],
     "thumbnail": null,
-    "description": "",
+    "description": "Designed for an Inktober challenge. ",
     "cp": [],
     "cpdescription": "",
     "video": null,
@@ -13,5 +13,10 @@
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "2d",
+        "color_change",
+        "inktober",
+        "2021"
+    ]
 }
