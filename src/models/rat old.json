@@ -1,11 +1,11 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Rat (old)",
+    "date": "2013-01-01",
     "photo": [
-        "photos/"
+        "rat old.JPG"
     ],
     "thumbnail": null,
-    "description": "",
+    "description": "My oldest design that I can remember, designed when  was 10 years old",
     "cp": [],
     "cpdescription": "",
     "video": null,
@@ -13,5 +13,10 @@
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "2013",
+        "animal",
+        "mammal",
+        "bp"
+    ]
 }

@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Princess",
+    "date": "2019-07-01",
     "photo": [
-        "photos/"
+        "princess.jpg"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
-    "cpdescription": "",
+    "description": "One of my first human figure designs. Inspired by Zelda",
+    "cp": [
+        "princess cp.png"
+    ],
+    "cpdescription": "Not completely correct, but what I drew at the time.",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "human",
+        "fantasy",
+        "bp",
+        "uniaxial",
+        "has_cp",
+        "2019"
+    ]
 }

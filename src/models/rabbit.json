@@ -1,17 +1,27 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Rabbit",
+    "date": "2021-11-01",
     "photo": [
-        "photos/"
+        "rabbit.jpg"
     ],
     "thumbnail": null,
     "description": "",
-    "cp": [],
+    "cp": [
+        "rabbit cp.jpg"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "animal",
+        "mammal",
+        "simple",
+        "22.5",
+        "has_cp",
+        "2021",
+        "cute"
+    ]
 }

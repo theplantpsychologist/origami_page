@@ -1,17 +1,28 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Rattlesnake",
+    "date": "2021-08-01",
     "photo": [
-        "photos/"
+        "rattlesnake-3.jpg"
     ],
     "thumbnail": null,
     "description": "",
-    "cp": [],
-    "cpdescription": "",
-    "video": null,
+    "cp": [
+        "rattlesnake cp.svg"
+    ],
+    "cpdescription": "Mostly bp, but transitions to hp for the scales. These scales are more efficient than conventional bp scales.",
+    "video": "https://youtu.be/PhDyW3eXobU",
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "portfolio",
+        "hp",
+        "bp",
+        "scales",
+        "animal",
+        "has_cp",
+        "has_video",
+        "2021"
+    ]
 }

@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Pikmin",
+    "date": "2018-07-01",
     "photo": [
-        "photos/"
+        "pikmin.JPG",
+        "pikmin2.png"
     ],
     "thumbnail": null,
-    "description": "",
+    "description": "Pikmin 2 was one of my favorite games as a kid.",
     "cp": [],
     "cpdescription": "",
-    "video": null,
+    "video": "https://youtu.be/Ut6NX1FN3aA",
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "mythical",
+        "color_change",
+        "cute",
+        "bp",
+        "uniaxial",
+        "has_video",
+        "2018"
+    ]
 }

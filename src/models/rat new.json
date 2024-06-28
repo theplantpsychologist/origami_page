@@ -1,17 +1,25 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Rat (new)",
+    "date": "2017-08-01",
     "photo": [
-        "photos/"
+        "rat new.JPG"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
+    "description": "A redesign of <a href='rat old.html'>an older design</a>, with the grid size reduced from 32 to 13.",
+    "cp": [
+        "rat cp.png"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "animal",
+        "mammal",
+        "bp",
+        "has_cp",
+        "2017"
+    ]
 }
