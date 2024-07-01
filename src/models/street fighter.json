@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Street Fighter",
+    "date": "2020-07-01",
     "photo": [
-        "photos/"
+        "final martial artist.jpg"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
-    "cpdescription": "",
+    "description": "Inspired by Ryu from Street Fighter.",
+    "cp": [
+        "fighter cp.png"
+    ],
+    "cpdescription": "The flaps in the top corners get folor changed and folded over the shoulders to form the vest.",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "human",
+        "color_change",
+        "bp",
+        "uniaxial",
+        "has_cp",
+        "2020"
+    ]
 }

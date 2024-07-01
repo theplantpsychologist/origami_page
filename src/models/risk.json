@@ -1,17 +1,27 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Risk",
+    "date": "2021-10-31",
     "photo": [
-        "photos/"
+        "risk.jpg"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
+    "description": "The final challenge of Inktober 2021, with the prompt \"risk\". This model represents the risk of opening up your heart to others.",
+    "cp": [
+        "risk cp.png"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "inktober",
+        "human",
+        "cute",
+        "color_change",
+        "bp",
+        "has_cp",
+        "2021"
+    ]
 }

@@ -1,17 +1,24 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Swan",
+    "date": "2021-01-01",
     "photo": [
-        "photos/"
+        "swan-2.jpg"
     ],
     "thumbnail": null,
     "description": "",
     "cp": [],
     "cpdescription": "",
-    "video": null,
+    "video": "https://youtu.be/i0MFUIahMEw",
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "animal",
+        "bird",
+        "22.5",
+        "simple",
+        "has_video",
+        "2021"
+    ]
 }

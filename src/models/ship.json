@@ -1,17 +1,22 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Ship",
+    "date": "2015-04-01",
     "photo": [
-        "photos/"
+        "ship old.jpg"
     ],
     "thumbnail": null,
     "description": "",
     "cp": [],
-    "cpdescription": "",
+    "cpdescription": "Folded from a sunken frog base.",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "object",
+        "color_change",
+        "22.5",
+        "2015"
+    ]
 }

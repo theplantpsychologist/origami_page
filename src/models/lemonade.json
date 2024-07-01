@@ -1,8 +1,8 @@
 {
     "name": "Lemonade",
-    "date": null,
+    "date": "2021-10-01",
     "photo": [
-        "2021-10-01"
+        "lemoade.jpg"
     ],
     "thumbnail": null,
     "description": "Designed as part of an \"Inktober\" challenge",
@@ -21,6 +21,7 @@
         "bp",
         "nonuniaxial",
         "inktober",
-        "has_cp"
+        "has_cp",
+        "2021"
     ]
 }

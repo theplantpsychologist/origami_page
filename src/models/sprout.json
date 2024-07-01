@@ -1,17 +1,24 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Growing Sprout",
+    "date": "2020-06-01",
     "photo": [
-        "photos/"
+        "sprout.jpg"
     ],
     "thumbnail": null,
-    "description": "",
+    "description": "An action model that \"grows\" when you pull on it.",
     "cp": [],
     "cpdescription": "",
-    "video": null,
+    "video": "https://youtu.be/sAlkHi7Tm2c",
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "plant",
+        "action",
+        "bp",
+        "color_change",
+        "has_video",
+        "2020"
+    ]
 }

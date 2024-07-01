@@ -29,3 +29,8 @@ Lang's website builds an html page for each tag. although the gallery page usual
     number of columns is determined by screen width (mobile friendly)
 
 later: go through google photos and download models that aren't here
+
+
+TODO models:
+ - reindeer
+ - shepherd and sheep
