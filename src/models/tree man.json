@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Tree man",
+    "date": "2018-11-01",
     "photo": [
-        "photos/"
+        "tree man.JPG"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
-    "cpdescription": "",
+    "description": "Designed for the final design challenge of IOIO 2018.",
+    "cp": [
+        "tree man cp.png"
+    ],
+    "cpdescription": "The face uses inverted center flaps to create holes for the eyes, followed by an uninverted center flap right below for the nose. The woody texture is created by randomly shifting up and down the long horizontal pleats, drawn as the greyed out diagonal lines on the cp",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "fantasy",
+        "plant",
+        "bp",
+        "uniaxial",
+        "has_cp",
+        "2018"
+    ]
 }

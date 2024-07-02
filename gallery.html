@@ -4,8 +4,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <style>
-        img {
-            max-width: 200px;
+        /* Style the header */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #header a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        #navbar {
+            display: flex;
+        }
+
+        #navbar a {
+            margin-right: 10px;
+        }
+
+        /* Style the dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+    <style>
+        body {
+            font-family: "Avenir", sans-serif;
+        }
+        #model_gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        #model_gallery .model {
+            flex: 1 0 30%; /* Grow and shrink, basis is 30% */
+            margin: 1em;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media (max-width: 800px) {
+            #model_gallery .model {
+                flex: 1 0 45%; /* Grow and shrink, basis is 45% */
+            }
+        }
+        
+        @media (max-width: 500px) {
+            #model_gallery .model {
+                flex: 1 0 100%; /* Grow and shrink, basis is 100% */
+            }
+        }
+        #model_gallery img {
+            width: 400px;  
+            height: 400px; 
+            object-fit: cover;
+            position: relative;
+            z-index:1;
+        }
+
+        #model_gallery .model::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        #model_gallery .model:hover::before {
+            opacity: 1;
+        }
+
+        #model_gallery .model .model-name {
+            display: none;
+            position: absolute;
+            transform: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -80%);
+            color: black;
+            padding: 10px;
+            text-align: center;
+            z-index: 10;
+            font-size: 30px;
+        }
+
+        #model_gallery .model:hover .model-name {
+            display: block;
         }
     </style>
 </head>
@@ -39,11 +164,12 @@
                 .catch(error => console.error('Error:', error));
         }
         function display(queue,displayCP = false){
-            console.log(queue.length, "models found") //later write this to the html
-            const modelGallery = document.getElementById('model_gallery');
-            const modelCount = document.createElement('i');
+            const modelCount = document.getElementById('model_count_text');
             modelCount.textContent = "Models found: "+queue.length;
-            modelGallery.appendChild(modelCount);
+            const modelGallery = document.getElementById('model_gallery');
+            while (modelGallery.firstChild) {
+                modelGallery.removeChild(modelGallery.firstChild);
+            }
 
             for(const [filename,model] of queue){
                 const modelDiv = document.createElement('div');
@@ -62,18 +188,16 @@
                 modelThumbnail.src = !displayCP?"src/thumbnails/"+model.photo[0]:"src/cps/"+model.cp[0];
                 modelThumbnail.alt = model.name;
                 modelLink.appendChild(modelThumbnail);
-                // const modelName = document.createElement('p');
-                // modelName.textContent = model.name;
-                // modelLink.appendChild(modelName);
+                const modelName = document.createElement('p');
+                modelName.classList.add('model-name');
+                modelName.textContent = model.name;
+                modelLink.appendChild(modelName);
             }
         }
         
-        async function search(tags=[],sort="date",displayCP=false){
+        async function search(tags=[],displayCP=false,sort="date"){
             console.log("refreshing search. searching for:",tags)
             const modelGallery = document.getElementById('model_gallery');
-            while (modelGallery.firstChild) {
-                modelGallery.removeChild(modelGallery.firstChild);
-            }
             function filter(model,tags){
                 // check if all tags are present
                 //True: model gets added to queue
@@ -116,35 +240,71 @@
             }
         })();
 
+        var search_tags = [];
+
+        function addTag(tag,displayCP=false) {
+            if (!search_tags.includes(tag)) {
+                search_tags.push(tag);
+            }
+            search(search_tags,displayCP);
+        }
+
+        function removeTag(tag,displayCP=false) {
+            var index = search_tags.indexOf(tag);
+            if (index !== -1) {
+                search_tags.splice(index, 1);
+            }
+            search(search_tags,displayCP);
+        }
+
+        function setSearchTags(tags,displayCP=false) {
+            search_tags = tags;
+            search(search_tags,displayCP);
+        }
     </script>
 
-    <h1>Gallery</h1>
-    <p>this is gallery of all models</p>
-    <div id="user_controls">
-        <button id="search_all" onclick="search([])">All</button>
-        <button id="search_portfolio" onclick="search(['portfolio'])">Portfolio</button>
-        <button id="search_cps" onclick="search(['has_cp'],'date',true)">Display Crease Patterns</button>
-        <button id="search_human" onclick="search(['human'])">Human Figures</button>
-        <button id="search_animal" onclick="search(['animal'])">Animals</button>
+    <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white;">
+        <a id="logo_home" href="index.html"><img src="img/logo.svg" alt=""></a>
+        <div id="navbar">
+            <!-- later, make these as drop down menus for subpages -->
+            <!-- See how lang does it -->
+            <a href="gallery.html"><button>Gallery</button></a>
+            <a href="engineering.html"><button>Engineering</button></a>
+            <a href="learn.html"><button>Learn</button></a>
+            <a href="about.html"><button>About</button></a>
+            <a href="business.html"><button>Business</button></a>
+            
+        </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <h1>Gallery</h1>
+        <p>this is gallery of all models</p>
+        <div id="user_controls">
+            <button id="search_all" onclick="{setSearchTags([])}">All</button>
+            <button id="search_portfolio" onclick="setSearchTags(['portfolio'])">Portfolio</button>
+            <button id="search_cps" onclick="addTag('has_cp',true);">Display Crease Patterns</button>
 
-        <select id="tag_filter" onchange="search([this.value])">
-            <option value="">All</option>
-        </select>
+            
+            <button id="search_human" onclick="search(['human'])">Human Figures</button>
+            <button id="search_animal" onclick="search(['animal'])">Animals</button>
+    
+            <select id="tag_filter" onchange="search([this.value])">
+                <option value="">All</option>
+            </select>
+        </div>
+        <div id="model_count">
+            <p><i id="model_count_text"></i></p>
+        </div>
+        </div>
+        <div id="model_gallery">
+        </div>    
     </div>
-    </div>
-    <div id="model_gallery">
-    </div>
-
 
     <script>
         //default loadup
-        search([]);
-
-
-        /*
-        If no models found, display "no models found"
-        
-        */
+        // let search_tags = [];
+        search(search_tags);
     </script>
 </body>
 </html>

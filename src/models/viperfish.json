@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Viperfish",
+    "date": "2020-05-01",
     "photo": [
-        "photos/"
+        "viperfish.jpg"
     ],
     "thumbnail": null,
     "description": "",
-    "cp": [],
-    "cpdescription": "",
+    "cp": [
+        "viperfish cp.png"
+    ],
+    "cpdescription": "Notable for level shifting over a scaled region in order to maximize the body length.",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "animal",
+        "sea_life",
+        "scales",
+        "bp",
+        "has_cp",
+        "2020"
+    ]
 }

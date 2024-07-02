@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Walking in the wind",
+    "date": "2022-05-01",
     "photo": [
-        "photos/"
+        "windy.png"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
-    "cpdescription": "",
+    "description": "Another figure in the \"ordinary people\" series. This time, the goal was to create an illusion of motion with the clothes and pose, as if the figure really is struggling to walk forward on a windy day.",
+    "cp": [
+        "windy.svg"
+    ],
+    "cpdescription": "Both arms come from the right side of the paper, and then twisted into place.",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "human",
+        "portfolio",
+        "bp",
+        "uniaxial",
+        "has_cp",
+        "2022"
+    ]
 }

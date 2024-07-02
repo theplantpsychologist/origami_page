@@ -1,17 +1,27 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Tugboat",
+    "date": "2021-10-03",
     "photo": [
-        "photos/"
+        "tuboat.jpg"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
+    "description": "An Inktober prompt",
+    "cp": [
+        "tugboat cp.png"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "object",
+        "inktober",
+        "color_change",
+        "3d",
+        "simple",
+        "has_cp",
+        "2021"
+    ]
 }

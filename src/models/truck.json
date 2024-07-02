@@ -1,17 +1,24 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Truck",
+    "date": "2021-10-10",
     "photo": [
-        "photos/"
+        "truck.jpg"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
-    "cpdescription": "",
+    "description": "An Inktober prompt",
+    "cp": [
+        "truck cp.png"
+    ],
+    "cpdescription": "Grid: 17x17",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "3d",
+        "inktober",
+        "has_cp",
+        "2021"
+    ]
 }

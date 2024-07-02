@@ -1,17 +1,26 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Turtle HP 2",
+    "date": "2022-08-01",
     "photo": [
-        "photos/"
+        "turtle hp-0103.png"
     ],
     "thumbnail": null,
-    "description": "",
-    "cp": [],
+    "description": "Originally intended as an HP version of the classic <a href='plants%20turtle.html'>Plant's Turtle</a>, but ended up significantly more complex--for example, the shell pattern is a more realistic hexagon pattern, and there are additional textures on the head and fins.",
+    "cp": [
+        "turtle hp cp.svg"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "animal",
+        "sea_life",
+        "hp",
+        "portfolio",
+        "has_cp",
+        "2022"
+    ]
 }

@@ -34,3 +34,5 @@ later: go through google photos and download models that aren't here
 TODO models:
  - reindeer
  - shepherd and sheep
+
+ - add two blank models for the bottom
