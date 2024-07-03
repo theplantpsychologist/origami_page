@@ -177,7 +177,7 @@ def build_html_files():
                     if tags_div != -1:
                         tags = ""
                         for tag in data["tags"]:
-                            tags += f'<span>{tag+", "}</span>'
+                            tags += f'<span class="tag">{tag+""}</span>'
                         html_content = html_content[:tags_div] + "<p>Tags: "+tags +"</p>"+ html_content[tags_div:]
 
                     html_file.seek(0)

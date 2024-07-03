@@ -6,14 +6,18 @@
     <link rel="stylesheet" type="text/css" href="../global_style.css">
     <!-- style the page in general -->
     <style>
+        h1{
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
         #wrapper {
             margin-top: 150px;
-            margin-bottom: 800px;
+            margin-bottom: 80px;
             margin-left: 80px;
             margin-right: 100px;
         }
         #name {
-            font-size: 24px;
+            font-size: 36px;
             margin-bottom: 10px;
         }
         #date {
@@ -21,34 +25,33 @@
             color: gray;
             margin-bottom: 10px;
         }
-        #description {
+        #description, #cpdescription, #diagrams {
+            margin-bottom: 20px;
+            font-size:18
+        }
+
+        #tags {
+            display: flex;
+            flex-wrap: wrap;
             margin-bottom: 20px;
         }
 
-        #cpdescription {
-            margin-bottom: 20px;
-        }
-        #diagrams {
-            margin-bottom: 20px;
-        }
-        #tags {
-            margin-bottom: 20px;
+        .tag {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid #000; /* Add a border */
         }
     </style>
     <!-- style the photo carousel -->
     <style>
         #photos, #video, #cp {
-            margin-bottom: 20px;
+            /* margin-bottom: 200px; */
             width: 100%;
-            height: 300px;
-            overflow: hidden;
-        }
-        #photos {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
-            
+            height: 500px;
+            overflow: hidden;            
             flex: 1 0 30%;
             margin: 1em;
             position: relative;
@@ -59,7 +62,14 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
-        
+        #photos img, #video iframe, #cp img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        #video:empty, #cp:empty {
+            display: none;
+        }
 
         .carousel-image {
             display: none;
@@ -70,11 +80,6 @@
 
         .carousel-image.active {
             display: block;
-        }
-        #photos img, #video iframe, #cp img {
-            width: auto;
-            height: 100%;
-            object-fit: cover;
         }
         #photos button{
             z-index: 100;
@@ -144,19 +149,19 @@
         </div>
     </div>
     <div id="wrapper">
-        <button onclick="window.location.href='../gallery.html'" style="background-color: black; color: white; border: none; cursor: pointer; font-size: 16px; padding: 5px 10px;">Back to gallery</button>
+        <button onclick="window.location.href='../gallery.html'" style="background-color: transparent; color: #333; border: 1px solid #333; cursor: pointer; font-size: 16px; padding: 5px 10px;">Back to gallery</button>
+        <br><br>
 
         <h1 id="name">Friends</h1>
         <p id="date">January 2022</p>
         <p id="description">One main challenge with human figure design is creating emotional expressions. Here, the main feature that makes the figures "smile" are the raised cheeks under their eyes.</p>
         <div id="photos"><img class="carousel-image" src="../src/photos/friends.png" alt="photo"><img class="carousel-image" src="../src/photos/friends-4.png" alt="photo"><button id="carousel-prev" onclick="changeImage(-1)"><</button><button id="carousel-next" onclick="changeImage(1)">></button>
         </div>
-
-        <div id="cp"><img src="../src/cps/friends cp.svg" alt="crease pattern"></div>
         <p id="cpdescription">This multi-figure structure uses the same technique as used in <a href="./family.html">Family</a>. Technically, this would be called multiaxial box pleating, with one axis for each figure. The friends are literally inseparable (joined from shoulder to heel), and that greatly improves the model's efficiency. <br><br>Grid: 40x40 </p>
+        <div id="cp"><img src="../src/cps/friends cp.svg" alt="crease pattern"></div>
         <div id="video"></div>
         <div id="diagrams"></div>
-        <div id="tags"><p>Tags: <span>human, </span><span>multi_subject, </span><span>multiaxial, </span><span>uniaxial, </span><span>nonuniaxial, </span><span>bp, </span><span>has_cp, </span><span>2022, </span></p></div> 
+        <div id="tags"><p>Tags: <span class="tag">human</span><span class="tag">multi_subject</span><span class="tag">multiaxial</span><span class="tag">uniaxial</span><span class="tag">nonuniaxial</span><span class="tag">bp</span><span class="tag">has_cp</span><span class="tag">2022</span></p></div> 
 
     </div>
 

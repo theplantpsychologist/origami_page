@@ -6,14 +6,18 @@
     <link rel="stylesheet" type="text/css" href="../global_style.css">
     <!-- style the page in general -->
     <style>
+        h1{
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
         #wrapper {
             margin-top: 150px;
-            margin-bottom: 800px;
+            margin-bottom: 80px;
             margin-left: 80px;
             margin-right: 100px;
         }
         #name {
-            font-size: 24px;
+            font-size: 36px;
             margin-bottom: 10px;
         }
         #date {
@@ -21,34 +25,33 @@
             color: gray;
             margin-bottom: 10px;
         }
-        #description {
+        #description, #cpdescription, #diagrams {
+            margin-bottom: 20px;
+            font-size:18
+        }
+
+        #tags {
+            display: flex;
+            flex-wrap: wrap;
             margin-bottom: 20px;
         }
 
-        #cpdescription {
-            margin-bottom: 20px;
-        }
-        #diagrams {
-            margin-bottom: 20px;
-        }
-        #tags {
-            margin-bottom: 20px;
+        .tag {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid #000; /* Add a border */
         }
     </style>
     <!-- style the photo carousel -->
     <style>
         #photos, #video, #cp {
-            margin-bottom: 20px;
+            /* margin-bottom: 200px; */
             width: 100%;
-            height: 300px;
-            overflow: hidden;
-        }
-        #photos {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            overflow: hidden;
-            
+            height: 500px;
+            overflow: hidden;            
             flex: 1 0 30%;
             margin: 1em;
             position: relative;
@@ -59,7 +62,14 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
-        
+        #photos img, #video iframe, #cp img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        #video:empty, #cp:empty {
+            display: none;
+        }
 
         .carousel-image {
             display: none;
@@ -70,11 +80,6 @@
 
         .carousel-image.active {
             display: block;
-        }
-        #photos img, #video iframe, #cp img {
-            width: auto;
-            height: 100%;
-            object-fit: cover;
         }
         #photos button{
             z-index: 100;
@@ -144,19 +149,19 @@
         </div>
     </div>
     <div id="wrapper">
-        <button onclick="window.location.href='../gallery.html'" style="background-color: black; color: white; border: none; cursor: pointer; font-size: 16px; padding: 5px 10px;">Back to gallery</button>
+        <button onclick="window.location.href='../gallery.html'" style="background-color: transparent; color: #333; border: 1px solid #333; cursor: pointer; font-size: 16px; padding: 5px 10px;">Back to gallery</button>
+        <br><br>
 
         <h1 id="name">Fallen Angel</h1>
         <p id="date">March 2021</p>
         <p id="description">I was participating in a folding contest on Facebook, and the final round was to fold this Fallen Angel model originally designed by <a href="https://www.youtube.com/user/kennosaya/featured">Yoshimasa Tsuruta</a>. They gave us the task on Monday and we had to finish by Friday at midnight; at the same time that week, I was spending 6-8 hours a day finishing up the <a href="./grim reaper.html">grim reaper</a> for a separate origami contest due that week, on top of schoolwork, exams, and a part time job. <br><br> Overall, I was left with under 48 hours to test fold the original model, redesign it entirely, and refold it--a process that can normally take weeks. I would have liked to shape it a bit more, but I managed to turn it in on time and got second place. As expected, I was completely burnt out from origami for a few weeks, but eventually recovered.</p>
         <div id="photos"><img class="carousel-image" src="../src/photos/fallen angel.jpg" alt="photo"><img class="carousel-image" src="../src/photos/fallen angel skull.jpg" alt="photo"><button id="carousel-prev" onclick="changeImage(-1)"><</button><button id="carousel-next" onclick="changeImage(1)">></button>
         </div>
-
-        <div id="cp"><img src="../src/cps/fallen angel comparison.png" alt="crease pattern"></div>
         <p id="cpdescription">I didn't draw a full cp for a number of reasons (mainly because it was a lot of work) but I did think it would be worth showing a comparison of the packings to show how much I ended up modifying the model. I reduced the grid size by adding pythagorean stretches, changed the proportions of the arms, rearranged the head and body to add robe details, and added an entire shaped skull where the original model had just an empty hood. <br><br>Grid: 64x64 for original, 60x60 for modified</p>
+        <div id="cp"><img src="../src/cps/fallen angel comparison.png" alt="crease pattern"></div>
         <div id="video"></div>
         <div id="diagrams"></div>
-        <div id="tags"><p>Tags: <span>human, </span><span>mythical, </span><span>bp, </span><span>uniaxial, </span><span>has_cp, </span><span>2021, </span></p></div> 
+        <div id="tags"><p>Tags: <span class="tag">human</span><span class="tag">mythical</span><span class="tag">bp</span><span class="tag">uniaxial</span><span class="tag">has_cp</span><span class="tag">2021</span></p></div> 
 
     </div>
 
