@@ -3,25 +3,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style src="../global_style.css"></style>
     <style>
-        img {
-            max-width: 600px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #logo_home {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        #navbar {
+            display: inline-block;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        #navbar button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        #wrapper {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        #name {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #date {
+            font-size: 14px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        #description {
+            margin-bottom: 20px;
+        }
+
+        #photos, #video, #cp {
+            margin-bottom: 20px;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        #photos img, #video iframe, #cp iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #cpdescription {
+            margin-bottom: 20px;
+        }
+
+        #diagrams {
+            margin-bottom: 20px;
+        }
+
+        #tags {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white;">
+        <a id="logo_home" href="../index.html"><img src="../img/logo.svg" alt=""></a>
+        <div id="navbar">
+            <!-- later, make these as drop down menus for subpages -->
+            <!-- See how lang does it -->
+            <a href="../gallery.html"><button>Gallery</button></a>
+            <a href="../engineering.html"><button>Engineering</button></a>
+            <a href="../learn.html"><button>Learn</button></a>
+            <a href="../about.html"><button>About</button></a>
+            <a href="../business.html"><button>Business</button></a>
+            
+        </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <button onclick="window.location.href='../gallery.html'" style="background-color: black; color: white; border: none; cursor: pointer; font-size: 16px; padding: 5px 10px;">Back to gallery</button>
 
-    <a href="../gallery.html">Back to gallery</a>
+        <h1 id="name">Fish</h1>
+        <p id="date">February 2021</p>
+        <p id="description">A very efficient fish, but a bit plain/generic.</p>
+        <div id="photos"><img src="../src/photos/fish tg.jpg" alt="photo"></div>
 
-    <h1 id="name">Fish</h1>
-    <p id="date">February 2021</p>
-    <p id="description">A very efficient fish, but a bit plain/generic.</p>
-    <img src="../src/photos/fish tg.jpg" alt="photo"><div id="photos"></div>
+        <div id="cp"><img src="../src/cps/fish cp.png" alt="crease pattern"></div>
+        <p id="cpdescription">Uses a similar structure as <a href="./portfolio/divine boar.html">Divine Boar</a>.</p>
+        <div id="video"></div>
+        <div id="diagrams"></div>
+        <div id="tags"><p>Tags: <span>animal, </span><span>fish, </span><span>tilted_grid, </span><span>has_cp, </span><span>2021, </span><span>sea_life, </span></p></div> 
 
-    <img src="../src/cps/fish cp.png" alt="crease pattern"><div id="cp"></div>
-    <p id="cpdescription">Uses a similar structure as <a href="./portfolio/divine boar.html">Divine Boar</a>.</p>
-    <div id="video"></div>
-    <div id="diagrams"></div>
-    <p>Tags: <span>animal, </span><span>fish, </span><span>tilted_grid, </span><span>has_cp, </span><span>2021, </span><span>sea_life, </span></p><div id="tags"></div> 
+    </div>
+
 </body>
 </html>

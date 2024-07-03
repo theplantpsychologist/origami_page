@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
+    <style src="global_style.css"></style>
     <style>
         /* Style the header */
         #header {
@@ -21,6 +22,7 @@
             text-decoration: none;
             color: #333;
             margin-right: 10px;
+            font-family: "Avenir", sans-serif;
         }
 
         #navbar {
@@ -29,6 +31,7 @@
 
         #navbar a {
             margin-right: 10px;
+            font-family: "Avenir", sans-serif;
         }
 
         /* Style the dropdown menu */
@@ -55,6 +58,7 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            font-family: "Avenir", sans-serif;
         }
 
         .dropdown-content a:hover {
@@ -64,39 +68,99 @@
     <style>
         body {
             font-family: "Avenir", sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
+        #wrapper {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: "Avenir", sans-serif;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-family: "Avenir", sans-serif;
+        }
+
+        #user_controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        #user_controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: "Avenir", sans-serif;
+        }
+
+        #user_controls select {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            font-family: "Avenir", sans-serif;
+        }
+
+        #model_count {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #model_count_text {
+            font-style: italic;
+        }
+
         #model_gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
         }
-        
+
         #model_gallery .model {
-            flex: 1 0 30%; /* Grow and shrink, basis is 30% */
+            flex: 1 0 30%;
             margin: 1em;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
         }
-        
+
         @media (max-width: 800px) {
             #model_gallery .model {
-                flex: 1 0 45%; /* Grow and shrink, basis is 45% */
+                flex: 1 0 45%;
             }
         }
-        
+
         @media (max-width: 500px) {
             #model_gallery .model {
-                flex: 1 0 100%; /* Grow and shrink, basis is 100% */
+                flex: 1 0 100%;
             }
         }
+
         #model_gallery img {
-            width: 400px;  
-            height: 400px; 
+            width: 100%;
+            height: auto;
             object-fit: cover;
-            position: relative;
-            z-index:1;
         }
 
         #model_gallery .model::before {
@@ -111,6 +175,7 @@
             transition: opacity 0.3s ease;
             z-index: 2;
         }
+
         #model_gallery .model:hover::before {
             opacity: 1;
         }
@@ -163,7 +228,20 @@
                 .then(response => response.json())
                 .catch(error => console.error('Error:', error));
         }
+        
+        function model_sort(queue,order="date"){
+            //inputs a queue and sorts based on user input
+            //TODO: read user sorting input. a radio check box for date vs alphabetical, and then read that input and sort accordingly
+            if (order == "date"){
+                return queue.sort((a, b) => new Date(b[1].date) - new Date(a[1].date))
+            }
+            if (order =="alphabetical"){
+                return queue.sort((a, b) => a[1].name.localeCompare(b[1].name))
+            }
+        }
+
         function display(queue,displayCP = false){
+            //TODO: check if display CP or display photo is checked, and display accordingly
             const modelCount = document.getElementById('model_count_text');
             modelCount.textContent = "Models found: "+queue.length;
             const modelGallery = document.getElementById('model_gallery');
@@ -208,16 +286,6 @@
                 }
                 return model.name != ""
             }
-            function sort(queue,sort="date"){
-                //inputs a queue and sorts based on user input
-                //TODO: read user sorting input
-                if (sort == "date"){
-                    return queue.sort((a, b) => new Date(b[1].date) - new Date(a[1].date))
-                }
-                if (sort =="alphabetical"){
-                    return queue.sort((a, b) => a[1].name.localeCompare(b[1].name))
-                }
-            }
 
             model_data = await fetchFile("model_data.json");
             queue = []
@@ -227,7 +295,7 @@
                     queue.push([filename,model])
                 }
             }
-            display(sort(queue),displayCP);
+            display(model_sort(queue),displayCP);
         }
         (async function(){
             model_data = await fetchFile("model_data.json");
@@ -285,7 +353,7 @@
             <button id="search_portfolio" onclick="setSearchTags(['portfolio'])">Portfolio</button>
             <button id="search_cps" onclick="addTag('has_cp',true);">Display Crease Patterns</button>
 
-            
+
             <button id="search_human" onclick="search(['human'])">Human Figures</button>
             <button id="search_animal" onclick="search(['animal'])">Animals</button>
     

@@ -143,35 +143,35 @@ def build_html_files():
                     html_content = html_content.replace('<p id="cpdescription">cp description</p>', f'<p id="cpdescription">{data["cpdescription"]}</p>')
 
                     # Find the element with id "photos" and add image tags based on the image file paths listed in data["photos"]
-                    photos_div = html_content.find('<div id="photos">')
+                    photos_div = html_content.find('<div id="photos">') + len('<div id="photos">')
                     if photos_div != -1:
                         image_tags = ""
                         for photo in data["photo"]:
                             image_tags += f'<img src="{os.path.join("../src/photos",photo)}" alt="photo">'
-                        html_content = html_content[:photos_div] + image_tags + html_content[photos_div:]
+                        html_content = html_content[:(photos_div)] + image_tags + html_content[(photos_div):]
 
                     # fill in cp
-                    cp_div = html_content.find('<div id="cp">')
+                    cp_div = html_content.find('<div id="cp">') + len('<div id="cp">')
                     if cp_div != -1:
                         image_tags = ""
                         for cp in data["cp"]:
                             image_tags += f'<img src="{os.path.join("../src/cps",cp)}" alt="crease pattern">'
-                        html_content = html_content[:cp_div] + image_tags + html_content[cp_div:]
+                        html_content = html_content[:(cp_div)] + image_tags + html_content[(cp_div):]
 
                     #if there is a video, use the url and embed it in the div with id=video
                     if data["video"]:
-                        video_div = html_content.find('<div id="video">')
+                        video_div = html_content.find('<div id="video">') + len('<div id="video">')
                         if video_div != -1:
                             html_content = html_content[:video_div] + f"""<iframe width="560" height="315" src="https://www.youtube.com/embed/{data["video"][27:] if "shorts" in data["video"] else data["video"][17:]}?si=u_yWkDzkLtn0nOf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>""" + html_content[video_div:]
 
                     #fill in diagrams
                     if data["diagrams"][0]:
-                        diagrams_div = html_content.find('<div id="diagrams">')
+                        diagrams_div = html_content.find('<div id="diagrams">') + len('<div id="diagrams">')
                         if diagrams_div != -1:
                             html_content = html_content[:diagrams_div] + f'<p>Diagrams are available in: <a href={data["diagrams"][0]}>{data["diagrams"][1]}</a></p>' + html_content[diagrams_div:]
 
                     #fill in tags
-                    tags_div = html_content.find('<div id="tags">')
+                    tags_div = html_content.find('<div id="tags">') + len('<div id="tags">')
                     if tags_div != -1:
                         tags = ""
                         for tag in data["tags"]:
