@@ -26,6 +26,8 @@ TODO models:
  - everything in 2024
  - go through google photos, look for photos and cps that aren't already here and throw them in. easy for models to have multiple photos and cps (once carouseling is set up) (offline task)
  - Unsorted: an incoming batch of models that need to have their jsons assembled. when finish, combine with other models and recompile
+ - add "related model" attribute to the json. when compiling, display thumbnail and link to the related piece
+
 
 TODO gallery:
  - set up advanced controls vs basic controls

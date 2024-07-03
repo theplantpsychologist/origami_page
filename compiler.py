@@ -147,7 +147,9 @@ def build_html_files():
                     if photos_div != -1:
                         image_tags = ""
                         for photo in data["photo"]:
-                            image_tags += f'<img src="{os.path.join("../src/photos",photo)}" alt="photo">'
+                            image_tags += f'<img class="carousel-image" src="{os.path.join("../src/photos",photo)}" alt="photo">'
+                        if len(data["photo"]) > 1:
+                            image_tags += """<button id="carousel-prev" onclick="changeImage(-1)"><</button><button id="carousel-next" onclick="changeImage(1)">></button>"""
                         html_content = html_content[:(photos_div)] + image_tags + html_content[(photos_div):]
 
                     # fill in cp

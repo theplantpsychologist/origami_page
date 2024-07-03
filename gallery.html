@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
-    <style src="global_style.css"></style>
+    <link rel="stylesheet" type="text/css" href="global_style.css">
+
     <style>
         /* Style the header */
         #header {
@@ -65,32 +66,8 @@
             background-color: #f1f1f1;
         }
     </style>
+    <!-- user control box style -->
     <style>
-        body {
-            font-family: "Avenir", sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        #wrapper {
-            margin-top: 80px;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-family: "Avenir", sans-serif;
-        }
-
-        p {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 40px;
-            font-family: "Avenir", sans-serif;
-        }
-
         #user_controls {
             display: flex;
             justify-content: center;
@@ -98,7 +75,6 @@
             flex-wrap: wrap;
             margin-bottom: 40px;
         }
-
         #user_controls button {
             margin: 5px;
             padding: 10px 20px;
@@ -108,22 +84,66 @@
             border: none;
             cursor: pointer;
             font-family: "Avenir", sans-serif;
+            border-radius: 5px;
         }
-
         #user_controls select {
             margin: 5px;
             padding: 10px;
             font-size: 16px;
             font-family: "Avenir", sans-serif;
         }
-
-        #model_count {
-            text-align: center;
-            margin-bottom: 40px;
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
 
-        #model_count_text {
-            font-style: italic;
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style> 
+    <!-- body style -->
+    <style>
+        #wrapper {
+            margin-top: 150px;
+            margin-bottom:50px;
+            margin-left:10%;
+            margin-right:10%;
+            /* padding: 200px; */
+        }
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
         }
 
         #model_gallery {
@@ -131,7 +151,6 @@
             flex-wrap: wrap;
             justify-content: space-around;
         }
-
         #model_gallery .model {
             flex: 1 0 30%;
             margin: 1em;
@@ -144,25 +163,11 @@
             border-radius: 5px;
             overflow: hidden;
         }
-
-        @media (max-width: 800px) {
-            #model_gallery .model {
-                flex: 1 0 45%;
-            }
-        }
-
-        @media (max-width: 500px) {
-            #model_gallery .model {
-                flex: 1 0 100%;
-            }
-        }
-
-        #model_gallery img {
+        .model a img {
             width: 100%;
             height: auto;
             object-fit: cover;
         }
-
         #model_gallery .model::before {
             content: "";
             position: absolute;
@@ -175,11 +180,9 @@
             transition: opacity 0.3s ease;
             z-index: 2;
         }
-
         #model_gallery .model:hover::before {
             opacity: 1;
         }
-
         #model_gallery .model .model-name {
             display: none;
             position: absolute;
@@ -193,13 +196,13 @@
             z-index: 10;
             font-size: 30px;
         }
-
         #model_gallery .model:hover .model-name {
             display: block;
         }
     </style>
 </head>
 <body>
+    <noscript>Please enable Javascript to load the models on the page.</noscript>
     <script>
         /*
             Remember to add a listener to wait for the content of the document to be fully loaded.
@@ -308,6 +311,30 @@
             }
         })();
 
+        function searchBar(){
+            const searchBar = document.getElementById("searchBar");
+            search([searchBar.value]);
+            //TODO: add search for model name
+        }
+        
+        function toggleAdvancedSearch() {
+            var advancedSearch = document.getElementById('advancedSearch');
+            if (advancedSearch.style.display === 'none') {
+                advancedSearch.style.display = 'block';
+            } else {
+                advancedSearch.style.display = 'none';
+            }
+        }
+
+        function applyAdvancedSearch() {
+            var tag1 = document.getElementById('tag1').checked;
+            var tag2 = document.getElementById('tag2').checked;
+            // Get the values of other checkboxes as needed...
+            // Perform the search with the selected tags...
+            document.getElementById('advancedSearch').style.display = 'none';
+        }
+        
+        
         var search_tags = [];
 
         function addTag(tag,displayCP=false) {
@@ -331,7 +358,7 @@
         }
     </script>
 
-    <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white;">
+    <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white; z-index: 100;">
         <a id="logo_home" href="index.html"><img src="img/logo.svg" alt=""></a>
         <div id="navbar">
             <!-- later, make these as drop down menus for subpages -->
@@ -347,25 +374,47 @@
     </div>
     <div id="wrapper">
         <h1>Gallery</h1>
-        <p>this is gallery of all models</p>
         <div id="user_controls">
             <button id="search_all" onclick="{setSearchTags([])}">All</button>
             <button id="search_portfolio" onclick="setSearchTags(['portfolio'])">Portfolio</button>
-            <button id="search_cps" onclick="addTag('has_cp',true);">Display Crease Patterns</button>
 
+            <button onclick="toggleAdvancedSearch()">Advanced Search</button>
 
-            <button id="search_human" onclick="search(['human'])">Human Figures</button>
-            <button id="search_animal" onclick="search(['animal'])">Animals</button>
-    
-            <select id="tag_filter" onchange="search([this.value])">
-                <option value="">All</option>
-            </select>
+        </div>
+        <div id="advancedSearch" class="modal">
+            <div class="modal-content">
+                <!-- TODO: design the advanced search window  
+                    Search bar + button
+                    Display by photo vs display by CP (toggle switch)
+                    or vs and? or always do and
+                    
+                    Search by subject (columns of checkboxes)
+                    Search by design style (columns of checkboxes)
+                    Search by years (columns of radio check boxes)
+                    Search by other tags (columns of checkboxes)
+                -->
+                <span class="close" onclick="toggleAdvancedSearch()">&times;</span>
+                <input type="text" id="searchBar" placeholder="Search...">
+                <button onclick="searchBar()">Search</button>
+                <label>
+                    <input type="checkbox" id="tag1" value="tag1">
+                    Tag 1
+                </label>
+                <select id="tag_filter" onchange="search([this.value])">
+                    <option value="">All</option>
+                </select>
+                <label>
+                    <input type="checkbox" id="tag2" value="tag2">
+                    Tag 2
+                </label>
+                <button onclick="applyAdvancedSearch()">Apply</button>
+            </div>
         </div>
         <div id="model_count">
             <p><i id="model_count_text"></i></p>
         </div>
-        </div>
         <div id="model_gallery">
+            <!-- model divs will be added here by the script -->
         </div>    
     </div>
 

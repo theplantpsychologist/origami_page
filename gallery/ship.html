@@ -3,97 +3,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style src="../global_style.css"></style>
+    <link rel="stylesheet" type="text/css" href="../global_style.css">
+    <!-- style the page in general -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        #header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: white;
-            padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #logo_home {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        #navbar {
-            display: inline-block;
-        }
-
-        #navbar a {
-            text-decoration: none;
-            margin-right: 10px;
-        }
-
-        #navbar button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 5px 10px;
-        }
-
         #wrapper {
-            margin-top: 80px;
-            padding: 20px;
+            margin-top: 150px;
+            margin-bottom: 800px;
+            margin-left: 80px;
+            margin-right: 100px;
         }
-
         #name {
             font-size: 24px;
             margin-bottom: 10px;
         }
-
         #date {
             font-size: 14px;
             color: gray;
             margin-bottom: 10px;
         }
-
         #description {
             margin-bottom: 20px;
         }
 
+        #cpdescription {
+            margin-bottom: 20px;
+        }
+        #diagrams {
+            margin-bottom: 20px;
+        }
+        #tags {
+            margin-bottom: 20px;
+        }
+    </style>
+    <!-- style the photo carousel -->
+    <style>
         #photos, #video, #cp {
             margin-bottom: 20px;
             width: 100%;
             height: 300px;
             overflow: hidden;
         }
+        #photos {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            
+            flex: 1 0 30%;
+            margin: 1em;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        
 
-        #photos img, #video iframe, #cp iframe {
+        .carousel-image {
+            display: none;
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        #cpdescription {
-            margin-bottom: 20px;
+        .carousel-image.active {
+            display: block;
         }
-
-        #diagrams {
-            margin-bottom: 20px;
+        #photos img, #video iframe, #cp img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
         }
-
-        #tags {
-            margin-bottom: 20px;
+        #photos button{
+            z-index: 100;
         }
-
-        a {
-            color: #007bff;
-            text-decoration: none;
+        #carousel-prev{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #carousel-next{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
+    <script>
+        var images 
+        var currentIndex
+        window.onload = function() {
+
+            images = Array.from(document.querySelectorAll('.carousel-image'));
+            console.log(images)
+            currentIndex = 0;
+
+            // Show the first image by default
+            images[currentIndex].classList.add('active');
+        }
+        window.changeImage = function changeImage(direction) {
+            // Hide the current image
+            images[currentIndex].classList.remove('active');
+
+            // Update the current index
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+
+            // Show the new image
+            images[currentIndex].classList.add('active');
+        }
+    </script>
     <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white;">
         <a id="logo_home" href="../index.html"><img src="../img/logo.svg" alt=""></a>
         <div id="navbar">
@@ -114,7 +149,8 @@
         <h1 id="name">Ship</h1>
         <p id="date">April 2015</p>
         <p id="description"></p>
-        <div id="photos"><img src="../src/photos/ship old.jpg" alt="photo"></div>
+        <div id="photos"><img class="carousel-image" src="../src/photos/ship old.jpg" alt="photo">
+        </div>
 
         <div id="cp"></div>
         <p id="cpdescription">Folded from a sunken frog base.</p>
