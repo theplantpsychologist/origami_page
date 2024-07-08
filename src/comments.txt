@@ -3,22 +3,12 @@ template comments:
  - name: name of the model. will be name of the html file too
  - date: format as ISO "2019-03-06" or short ""03/06/2019". put whatever for the day, probably only month and year will be displayed
  - photos: list of photos to display, in order
- - thumbnail: which photo to be used as thumbnail. If null, the first photo in photos will be used
  - description: description of the model
  - cp: cp file(s)
  - cpdescription: comments about structure
  - video: an associated video, if applicable. usually a youtube link
  - diagrams: if available: link and display name
  - tags: make sure to include subject type (animal, human, object, other), design style (uniaxial, nonuniaxial, hp, bp, 22.5, 15, other, color change), status (signature, flagship, simple, complex, bottom shelf)
-
-User filters:
-    - has cp (may be able to display cps instead of models)
-    - subject type: animals, humans, other
-
-Lang's website builds an html page for each tag. although the gallery page usually just filters.
-    number of columns is determined by screen width (mobile friendly)
-
-
 
 TODO models (template):
  - reindeer
@@ -29,15 +19,24 @@ TODO models (template):
  - Unsorted: an incoming batch of models that need to have their jsons assembled. when finish, combine with other models and recompile
  - add "related model" attribute to the json. when compiling, display thumbnail and link to the related piece
  - make tags clickable
+    - query strings?
+    - or, as part of compile, make a clone of gallery.html for each tag
 
 TODO home (index):
  - add hero section
  - add appropriate images for engineering, learn, and business
- - polish the footer
+ - polish the footer (and add footer to everything)
  - carousel sliding animation
+ - add google analytics
+ - navbar dropdowns, and change button colors
+
+TODO contact:
+ - netlify forms or formspree for built in email services
+
 
 TODO gallery:
  - set up advanced controls
+ - animate the model divs coming in?
 
 
 TODO before swapping out repos:
