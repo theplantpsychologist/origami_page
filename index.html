@@ -21,112 +21,86 @@
 
         /* Style the wrapper */
         #wrapper {
-            margin-top: 80px;
-            padding: 50px;
-            max-width: 100%;
-            overflow-x: hidden;
+            margin-top: 150px;
+            margin-bottom:50px;
+            margin-left:10%;
+            margin-right:10%;
+            /* padding: 200px; */
         }
-
-        /* Style the home gallery preview */
-        #home_gallery_preview {
+        .description{
+            width:33%;
+        }
+        .preview {
+            width: 66%;
+            height: 500px;
+            overflow: hidden;            
+            flex: 1 0 30%;
+            margin: 1em;
+            position: relative;
             display: flex;
+            /* justify-content: center; */
+            flex-wrap: wrap;
+            justify-content: space-around;
             align-items: center;
-            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .preview img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .carousel-image {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: transform 0.5s ease-out;
+            z-index:10;
         }
 
-        #home_gallery_preview h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
+        .carousel-image.active {
+            display: block;
+            position: absolute;
+            transform: translateX(0);
+            z-index:10;
+        }
+        .carousel-image.inactive-left {
+            transform: translateX(-100%);
         }
 
-        #home_gallery_preview p {
-            font-size: 16px;
-            margin-bottom: 10px;
+        .carousel-image.inactive-right {
+            transform: translateX(100%);
+        }
+        #carousel-prev{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            z-index:100;
+        }
+        #carousel-next{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            z-index:100;
         }
 
-        #home_gallery_preview a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-        }
-
-        #carousel {
-            margin-left: 20px;
-        }
-
-        #carousel img {
-            width: 40%;
-        }
-
-        /* Style the home engineering preview */
-        #home_engineering_preview {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        #home_engineering_preview h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        #home_engineering_preview p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        #home_engineering_preview a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-        }
-
-        /* Style the home learn preview */
-        #home_learn_preview {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        #home_learn_preview h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        #home_learn_preview p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        #home_learn_preview a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-        }
-
-        /* Style the business preview */
-        #business_preview {
-            margin-bottom: 20px;
-        }
-
-        #business_preview h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        #business_preview p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        #business_preview ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        #business_preview li {
-            margin-bottom: 5px;
-        }
 
         /* Style the footer */
         #footer {
@@ -144,7 +118,6 @@
             margin-right: 10px;
         }
 
-    </style>
     </style>
 </head>
 <body>
@@ -165,35 +138,123 @@
     </div>
 
     <div id="wrapper">
+        <h1>
+            TODO: hero section
+        </h1>
+
+
+        <br>
+        <hr>
+        <br>
         <div id="home_gallery_preview" style="display: flex; align-items: center;">
-            <div>
-                <h2>origami artwork</h2>
-                <p>i make origami dsfsjdf dfsd flsj</p>
-                <a href="gallery.html"><button>full gallery</button></a>
+            <div class="description" style="width: 33%;">
+                <h2>Origami Artworks</h2>
+                <br>
+                <p>Browse through 100+ original designs, including crease patterns, model backstories, and design notes.</p>
+                <br>
+                <a href="gallery.html"><button>Full gallery</button></a>
             </div>
-            <div id="carousel" class="carousel">
-                <img src="src/photos/rattlesnake-3.jpg" alt="Image 3" style="width: 40%;">
-                <!-- use a js script to make a slideshow of a selection of photos -->
+            <div id="gallery_preview"class="preview" class="carousel" style="width: 66%;">
+                <button id="carousel-prev" onclick="changeImage(-1)"><</button>
+                <button id="carousel-next" onclick="changeImage(1)">></button>
+                <img class = "carousel-image inactive"src="src/thumbnails/rattlesnake-3.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/jsl hp.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/photos/turtle hp-0103.png" alt="">
+                <img class = "carousel-image inactive"src="src/photos/windy.png" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/family-5.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/journey1.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/tgdogs.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/forest path-4.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/stone golems-5.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/photos/shepherd-0126.png" alt="">
+                <img class = "carousel-image inactive"src="src/photos/dragon-9838.png" alt="">
             </div>
         </div>
+        <script>
+            var images 
+            var currentIndex
+            window.onload = function() {
+                // Randomize the order of images in gallery_preview
+                var galleryPreview = document.getElementById('gallery_preview');
+                images = Array.from(document.querySelectorAll('.carousel-image'))
+                console.log(images)
+
+                images.sort(function() {
+                    return 0.5 - Math.random();
+                });
+
+                images.forEach(function(image) {
+                    galleryPreview.appendChild(image);
+                });
+                
+                currentIndex = 0;
+    
+                // Show the first image by default
+                images[currentIndex].classList.add('active');
+                images[currentIndex].classList.remove('inactive');
+            }
+            window.changeImage = function changeImage(direction) {
+                // Hide the current image
+                images[currentIndex].classList.remove('active');
+                images[currentIndex].classList.add(direction > 0 ? 'inactive-right' : 'inactive-left');
+                // images[currentIndex].style.transform = `translateX(${direction * -100}%)`;
+                // Update the current index
+                currentIndex = (currentIndex + direction + images.length) % images.length;
+
+                // Show the new image
+                images[currentIndex].classList.remove('inactive-left', 'inactive-right')
+                images[currentIndex].classList.add('active');
+                // images[currentIndex].style.transform = `translateX(${direction * 100}%)`;
+                // Use setTimeout to delay the update of the transform property
+                // setTimeout(function() {
+                //     images.forEach((img, index) => {
+                //         if (index === currentIndex) {
+                //             img.style.transform = 'translateX(0)';
+                //         } else if (img.classList.contains('inactive-right')) {
+                //             img.style.transform = 'translateX(100%)';
+                //         } else if (img.classList.contains('inactive-left')) {
+                //             img.style.transform = 'translateX(-100%)';
+                //         }
+                //     });
+                // }, 100);
+            }
+        </script>
+        <br>
+        <hr>
+        <br>
         <div id="home_engineering_preview" style="display: flex; align-items: center;">
-            <a href="https://web.mit.edu/wongb/www/transitions-implementation/"><img src="img/5 to n.gif" alt="" style="width: 40%;"></a>
-            <div>
-                <h2>engineering projects</h2>
-                <p>check out my software projects</p>
-                <a href="engineering.html"><button>See more</button></a>
+            <div class="preview" style="width:66%;">
+                <a href="https://web.mit.edu/wongb/www/transitions-implementation/"><img src="img/5 to n.gif" alt="" style="width: 100%;"></a>
+            </div>
+            <div style="width:3%"></div>
+            <div class="description" style="width:33%">
+                <h2>Engineering</h2>
+                <br>
+                <p>Beyond origami itself: academic research, software tools, metamaterials, and more </p>
+                <br>
+                <a href="engineering.html"><button>See projects</button></a>
             </div>
         </div>
+        <br>
+        <hr>
+        <br>
         <div id="home_learn_preview" style="display: flex; align-items: center;">
-            <div>
-                <h2>learn origami</h2>
-                <p>learn how to make origami</p>
-                <a href="learn.html"><button>See more</button></a>
+            <div class="description">
+                <h2>Learn</h2>
+                <br>
+                <p>Resources I've created for you to learn and improve at origami</p>
+                <br>
+                <a href="learn.html"><button>Learn more</button></a>
             </div>
-            <img src="img/5 to n.gif" alt="" style="width: 40%;">
+            <div class="preview">
+                <img src="img/5 to n.gif" alt="" style="width: 100%;">
+            </div>
         </div>
-        <div id="business_preview"></div>
-            <h1>commission me</h1>
+        <br>
+        <hr>
+        <br>
+        <div id="business_preview">
+            <h2>commission me</h2>
             <p>these are the things i do:
                 <ul>
                     <li>design stuff</li>
@@ -203,7 +264,7 @@
             </p>
             <a href="contact.html"> <button>Contact me</button></a>
         </div>
-    </di</div>v>
+    </div>
     <div id = "footer">
         <img id = "logo_foot" src="img/logo.svg" alt="">
         <a href="contact.html">Contact</a>

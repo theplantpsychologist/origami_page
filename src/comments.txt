@@ -20,20 +20,28 @@ Lang's website builds an html page for each tag. although the gallery page usual
 
 
 
-TODO models:
+TODO models (template):
  - reindeer
  - shepherd and sheep
  - everything in 2024
+ - add more descriptions to things
  - go through google photos, look for photos and cps that aren't already here and throw them in. easy for models to have multiple photos and cps (once carouseling is set up) (offline task)
  - Unsorted: an incoming batch of models that need to have their jsons assembled. when finish, combine with other models and recompile
  - add "related model" attribute to the json. when compiling, display thumbnail and link to the related piece
+ - make tags clickable
 
+TODO home (index):
+ - add hero section
+ - add appropriate images for engineering, learn, and business
+ - polish the footer
+ - carousel sliding animation
 
 TODO gallery:
- - set up advanced controls vs basic controls
+ - set up advanced controls
 
-TODO everything else:
- - clean up styling
- - set up other pages (offline task)
+
+TODO before swapping out repos:
+ - fix the homepage
+ - add at least something to about, learn, engineering, business
  - publish: rename old page, and change this to be the new "origami." 
     - one way to do this: duplicate the other one and save the copy somewhere. Then in the folder that's connected to the other's github repo, delete everything, and dump all the files from this repo into that one. then push
