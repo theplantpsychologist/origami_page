@@ -11,17 +11,20 @@ template comments:
  - tags: make sure to include subject type (animal, human, object, other), design style (uniaxial, nonuniaxial, hp, bp, 22.5, 15, other, color change), status (signature, flagship, simple, complex, bottom shelf)
 
 TODO models (template):
- - reindeer
- - shepherd and sheep
- - everything in 2024
+ - models to add:
+    - reindeer
+    - shepherd and sheep
+    - bear cub
+    - otters holding hands
+    - angel
+    - add reel to head empty
  - add more descriptions to things
- - go through google photos, look for photos and cps that aren't already here and throw them in. easy for models to have multiple photos and cps (once carouseling is set up) (offline task)
- - Unsorted: an incoming batch of models that need to have their jsons assembled. when finish, combine with other models and recompile
+ - go through google photos, look for photos and cps that aren't already here and add them to the carousels
  - add "related model" attribute to the json. when compiling, display thumbnail and link to the related piece
  - make tags clickable
     - query strings?
     - or, as part of compile, make a clone of gallery.html for each tag
- - put another "back to gallery" at the bottom of the page. also put a footer
+ - put another "back to gallery" at the bottom of the page
 
 TODO home (index):
  - add hero section
