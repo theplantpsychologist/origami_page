@@ -291,13 +291,19 @@
             }
 
             model_data = await fetchFile("model_data.json");
-            queue = []
-            for (const filename of model_data.filenames){
-                model = await fetchFile("src/models/"+filename);
-                if(filter(model,tags)){
-                    queue.push([filename,model])
+            queue = (await Promise.all(model_data.filenames.map(async filename => {
+                const model = await fetchFile("src/models/" + filename);
+                if (filter(model, tags)) {
+                    return [filename, model];
                 }
-            }
+            }))).filter(item => item !== undefined);
+            // queue = []
+            // for (const filename of model_data.filenames){
+            //     model = await fetchFile("src/models/"+filename);
+            //     if(filter(model,tags)){
+            //         queue.push([filename,model])
+            //     }
+            // }
             display(model_sort(queue),displayCP);
         }
         (async function(){
