@@ -1,0 +1,22 @@
+{
+    "name": "Ghost",
+    "date": "2024-06-01",
+    "photo": [
+        "ghost.jpg"
+    ],
+    "tags": [
+        "hp",
+        "fantasy",
+        "has_video",
+        "2024"
+    ],
+    "description": "Designed as part of a <a href='https://www.youtube.com/live/srNDoU3pW0M?si=07C1rIYsHyH0d3Nc'>5 hour design challenge</a> with some friends. I attempted some fancier hp stuff but it didn't quite end up as I had hoped.",
+    "cp": [],
+    "video": "https://www.youtube.com/live/srNDoU3pW0M?si=07C1rIYsHyH0d3Nc",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "thumbnail": null
+}

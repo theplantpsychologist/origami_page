@@ -1,0 +1,26 @@
+{
+    "name": "10 grid lady",
+    "date": "2022-01-05",
+    "photo": [
+        "10 grid lady.jpg"
+    ],
+    "tags": [
+        "bp",
+        "uniaxial",
+        "human",
+        "simple",
+        "has_cp",
+        "2022"
+    ],
+    "description": "An attempt to make a \"full\" human figure with as low a grid size as possible.",
+    "cp": [
+        "10 grid lady cp.jpg"
+    ],
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "thumbnail": null
+}

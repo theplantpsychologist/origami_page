@@ -142,7 +142,7 @@ a:hover {
     background-color: white;
     color: black;
     padding: 10px;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }

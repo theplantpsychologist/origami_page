@@ -1,0 +1,28 @@
+{
+    "name": "Robo Ky",
+    "date": "2021-05-01",
+    "photo": [
+        "robo ky-10.jpg"
+    ],
+    "tags": [
+        "character",
+        "fantasy",
+        "human",
+        "bp",
+        "uniaxial",
+        "has_cp",
+        "has_video",
+        "2021"
+    ],
+    "description": "Design, fold, and tutorial for a commission.",
+    "cp": [
+        "robo ky cp.png"
+    ],
+    "video": "https://youtu.be/um3kb5jBms8?si=uYAGMkCHq8HTn3GH",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "thumbnail": null
+}

@@ -186,7 +186,7 @@ def build_html_files():
     print("All HTML files built successfully.")
 
 if __name__ == "__main__":
-    get_filenames()
+    #get_filenames()
     #compress_photos()
     build_html_files()
 

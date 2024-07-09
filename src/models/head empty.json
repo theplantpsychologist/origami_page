@@ -1,0 +1,29 @@
+{
+    "name": "Head Empty",
+    "date": "2024-06-27",
+    "photo": [
+        "head empty-6.jpg",
+        "head empty-7.png"
+    ],
+    "tags": [
+        "hp",
+        "portfolio",
+        "human",
+        "fantasy",
+        "3d",
+        "collaboration",
+        "has_cp",
+        "2024"
+    ],
+    "description": "Designed in collaboration with <a href='https://www.obb.design/crease-patterns/head-empty-32x32-grid'>Boice Wong</a>",
+    "cp": [
+        "head empty cp.png"
+    ],
+    "video": null,
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "thumbnail": null
+}

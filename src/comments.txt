@@ -21,14 +21,16 @@ TODO models (template):
  - make tags clickable
     - query strings?
     - or, as part of compile, make a clone of gallery.html for each tag
+ - put another "back to gallery" at the bottom of the page. also put a footer
 
 TODO home (index):
  - add hero section
  - add appropriate images for engineering, learn, and business
- - polish the footer (and add footer to everything)
  - carousel sliding animation
  - add google analytics
  - navbar dropdowns, and change button colors
+ - link the source code and add a "last updated: ___" somewhere
+ - put copyright or other text in the footer
 
 TODO contact:
  - netlify forms or formspree for built in email services
