@@ -12,7 +12,8 @@
         "uniaxial",
         "has_cp",
         "has_video",
-        "2021"
+        "2021",
+        "commission"
     ],
     "description": "Design, fold, and tutorial for a commission.",
     "cp": [
