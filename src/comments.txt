@@ -1,15 +1,3 @@
-
-template comments:
- - name: name of the model. will be name of the html file too
- - date: format as ISO "2019-03-06" or short ""03/06/2019". put whatever for the day, probably only month and year will be displayed
- - photos: list of photos to display, in order
- - description: description of the model
- - cp: cp file(s)
- - cpdescription: comments about structure
- - video: an associated video, if applicable. usually a youtube link
- - diagrams: if available: link and display name
- - tags: make sure to include subject type (animal, human, object, other), design style (uniaxial, nonuniaxial, hp, bp, 22.5, 15, other, color change), status (signature, flagship, simple, complex, bottom shelf)
-
 TODO models (template):
  - models to add:
     - reindeer
@@ -24,7 +12,6 @@ TODO models (template):
  - make tags clickable
     - query strings?
     - or, as part of compile, make a clone of gallery.html for each tag
- - put another "back to gallery" at the bottom of the page
 
 TODO home (index):
  - add hero section
@@ -32,20 +19,15 @@ TODO home (index):
  - carousel sliding animation
  - add google analytics
  - navbar dropdowns, and change button colors
- - link the source code and add a "last updated: ___" somewhere
- - put copyright or other text in the footer
+ - add resume somewhere (need to update resume anyways)
 
 TODO contact:
  - netlify forms or formspree for built in email services
-
 
 TODO gallery:
  - set up advanced controls
  - animate the model divs coming in?
 
+TODO engineering:
 
-TODO before swapping out repos:
- - fix the homepage
- - add at least something to about, learn, engineering, business
- - publish: rename old page, and change this to be the new "origami." 
-    - one way to do this: duplicate the other one and save the copy somewhere. Then in the folder that's connected to the other's github repo, delete everything, and dump all the files from this repo into that one. then push
+TODO learn
