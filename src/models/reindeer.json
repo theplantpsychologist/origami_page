@@ -1,17 +1,22 @@
 {
-    "name": "",
-    "date": null,
+    "name": "Reindeer",
+    "date": "2020-12-07",
     "photo": [
-        "photos/"
+        "reindeer.png"
     ],
     "thumbnail": null,
     "description": "",
-    "cp": [],
+    "cp": [
+        "reindeer cp.png"
+    ],
     "cpdescription": "",
     "video": null,
     "diagrams": [
         "",
         ""
     ],
-    "tags": []
+    "tags": [
+        "has_cp",
+        "2020"
+    ]
 }

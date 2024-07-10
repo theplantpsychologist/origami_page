@@ -24,8 +24,21 @@ TODO gallery:
  - animate the model divs coming in?
 
 TODO engineering:
- - port over everything from the old page
- - do a similar compiler-based approach? rather than implementing everything manually?
+ - Could structure like Lang's blog posts: right sidebar is list of tags to choose from, and main content is one wide column where each entry has a thumbnail, title, date, tags, discription, and a "continue reading" Button. use tags query strings, especially mechanical vs programming
+ List of items to put here:
+   - 2.671
+   - OSME hp
+   - OSME transitions
+   - transitions implementation
+   - foldable 3d printing (orikanji, and teamlabs)
+   - wiggler
+   - folding circuit
+   - gridder
+   - circle jig
+   - circle pleater
+   - boxpleater
+
+
 
 TODO learn:
  - separate page: FAQ: what happened to your hands, how did you get into origami, how can you improve at origami, do you use software, (check old IG poll)

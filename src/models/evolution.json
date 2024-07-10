@@ -1,0 +1,27 @@
+{
+    "name": "Evolution",
+    "date": "2020-07-01",
+    "photo": [
+        "evolution short.png",
+        "evolution tall.png"
+    ],
+    "tags": [
+        "animal",
+        "action",
+        "color_change",
+        "mammal",
+        "has_cp",
+        "2020"
+    ],
+    "description": "A model based on how giraffes evolved longer necks over time. In one state, the model has a short neck, but when you pull on the head, the neck extends--then spots appear on the other side.",
+    "cp": [
+        "evolution cp.png"
+    ],
+    "video": "",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "related": ""
+}

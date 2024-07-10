@@ -1,6 +1,6 @@
 {
     "name": "Duke Blue Devil",
-    "date": "2024-06-01",
+    "date": "2021-06-04",
     "photo": [
         "blue devil-2.jpg"
     ],
@@ -10,7 +10,8 @@
         "bp",
         "uniaxial",
         "2024",
-        "commission"
+        "commission",
+        "2021"
     ],
     "description": "Designed as a commission.",
     "cp": [],

@@ -2,7 +2,8 @@
     "name": "Rat (new)",
     "date": "2017-08-01",
     "photo": [
-        "rat new.JPG"
+        "rat new.JPG",
+        "rat back.png"
     ],
     "thumbnail": null,
     "description": "A redesign of <a href='rat old.html'>an older design</a>, with the grid size reduced from 32 to 13.",
