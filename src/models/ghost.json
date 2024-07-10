@@ -1,6 +1,6 @@
 {
     "name": "Ghost",
-    "date": "2024-06-01",
+    "date": "2022-10-22",
     "photo": [
         "ghost.jpg"
     ],
@@ -8,7 +8,7 @@
         "hp",
         "fantasy",
         "has_video",
-        "2024"
+        "2022"
     ],
     "description": "Designed as part of a <a href='https://www.youtube.com/live/srNDoU3pW0M?si=07C1rIYsHyH0d3Nc'>5 hour design challenge</a> with some friends. I attempted some fancier hp stuff but it didn't quite end up as I had hoped.",
     "cp": [],

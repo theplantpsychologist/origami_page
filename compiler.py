@@ -177,14 +177,14 @@ def build_html_files():
                     if tags_div != -1:
                         tags = ""
                         for tag in data["tags"]:
-                            tags += f'<span class="tag">{tag+""}</span>'
+                            # tags += f'<span class="tag">{tag+""}</span>'
+                            tags += """<a href="../gallery.html?tag="""+tag+""""><button class="button2 tag">"""+tag+"""</button></a>"""
                         html_content = html_content[:tags_div] + "<p>Tags: "+tags +"</p>"+ html_content[tags_div:]
 
                     html_file.seek(0)
                     html_file.write(html_content)
                     html_file.truncate()
     print("All HTML files built successfully.")
-
 if __name__ == "__main__":
     get_filenames()
     #compress_photos()

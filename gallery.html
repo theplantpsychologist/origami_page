@@ -598,7 +598,17 @@
     <script>
         //default loadup
         // let search_tags = [];
-        search(search_tags);
+        // search(search_tags);
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tag = urlParams.get('tag');
+            if (tag) {
+                search([tag]);
+            }
+            else {
+                search([]);
+            }
+        }; 
     </script>
 </body>
 </html>
