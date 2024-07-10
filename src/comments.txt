@@ -9,13 +9,11 @@ TODO models (template):
  - add more descriptions to things
  - go through google photos, look for photos and cps that aren't already here and add them to the carousels
  - add "related model" attribute to the json. when compiling, display thumbnail and link to the related piece
- - make tags clickable
-    - query strings?
-    - or, as part of compile, make a clone of gallery.html for each tag
+
 
 TODO home (index):
  - add hero section
-   - big image: left side cp, right side model, and then opacity fade the boundary between the two. use a model like the angel. Overlay text: Engineering + art = origami. put it above the wrapper.
+   - big image: left side cp, right side model, and then opacity fade the boundary between the two. use a model like the angel, or maybe journey. Overlay text: Engineering + art = origami. put it above the wrapper.
  - add appropriate images for engineering, learn, and business
  - carousel sliding animation
  - add google analytics

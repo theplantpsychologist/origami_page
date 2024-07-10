@@ -21,10 +21,11 @@
 
         /* Style the wrapper */
         #wrapper {
-            margin-top: 150px;
+            margin-top: 100vh;
             margin-bottom:50px;
             margin-left:10%;
             margin-right:10%;
+            z-index:1
             /* padding: 200px; */
         }
         .description{
@@ -120,8 +121,19 @@
     </div>
 
     
-
-
+    <!-- <div style="text-align: center;margin-top:50px">
+        <img src="img/hero1.svg" style="width:90%;margin-bottom:0px;padding:0px"alt="">
+    </div> -->
+    <div id="fadeOnScroll" style="width:100%;text-align: center; margin-top: -100vh; position:fixed;z-index:-1">
+        <img src="img/hero1.svg" style="margin-top:80px; width: 75%; border-radius: 15px; z-index:-1" alt="">
+    </div>
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            var opacity = 1 - scrollPosition / 300; // Adjust 300 to control the rate of fading
+            document.getElementById('fadeOnScroll').style.opacity = opacity;
+        });
+    </script>
     <div id="wrapper">
         <div id="home_gallery_preview" style="display: flex; align-items: center;">
             <div class="description" style="width: 33%;">
@@ -137,9 +149,10 @@
                 <img class = "carousel-image inactive"src="src/thumbnails/rattlesnake-3.jpg" alt="">
                 <img class = "carousel-image inactive"src="src/thumbnails/jsl hp.jpg" alt="">
                 <img class = "carousel-image inactive"src="src/photos/turtle hp-0103.png" alt="">
-                <img class = "carousel-image inactive"src="src/photos/windy.png" alt="">
-                <img class = "carousel-image inactive"src="src/thumbnails/family-5.jpg" alt="">
-                <img class = "carousel-image inactive"src="src/thumbnails/journey1.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/fallen angel.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/grim reaper final.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/cardinal.jpg" alt="">
+                <img class = "carousel-image inactive"src="src/thumbnails/head empty-6.jpg" alt="">
                 <img class = "carousel-image inactive"src="src/thumbnails/tgdogs.jpg" alt="">
                 <img class = "carousel-image inactive"src="src/thumbnails/forest path-4.jpg" alt="">
                 <img class = "carousel-image inactive"src="src/thumbnails/stone golems-5.jpg" alt="">
