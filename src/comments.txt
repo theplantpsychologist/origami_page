@@ -15,6 +15,7 @@ TODO models (template):
 
 TODO home (index):
  - add hero section
+   - big image: left side cp, right side model, and then opacity fade the boundary between the two. use a model like the angel. Overlay text: Engineering + art = origami. put it above the wrapper.
  - add appropriate images for engineering, learn, and business
  - carousel sliding animation
  - add google analytics
@@ -29,5 +30,11 @@ TODO gallery:
  - animate the model divs coming in?
 
 TODO engineering:
+ - port over everything from the old page
+ - do a similar compiler-based approach? rather than implementing everything manually?
 
-TODO learn
+TODO learn:
+ - separate page: FAQ: what happened to your hands, how did you get into origami, how can you improve at origami, do you use software, (check old IG poll)
+ - separate page: intro to origami, including cps
+ - link design videos, with a thumbnail
+ - link hp and transitions papers

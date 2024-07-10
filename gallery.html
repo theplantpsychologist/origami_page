@@ -125,6 +125,12 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        #checkboxes {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
     </style> 
     <!-- body style -->
     <style>
@@ -204,28 +210,6 @@
 <body>
     <noscript>Please enable Javascript to load the models on the page.</noscript>
     <script>
-        /*
-            Remember to add a listener to wait for the content of the document to be fully loaded.
-
-            To do here: 
-            upon the user input of a "filter" button:
-                read the filter inputs
-                Go through all the json files in the "models" folder, using the data in model_data.json 
-                    If the model satisfies the filters, add it to the queue
-                sort the queue if a sort filter was applied: name, date, etc
-                display the models from the queue into model_gallery. For each display:
-                    load the thumbnail as a link. When hovered, the model name appears
-                    when clicked, link to gallery/model.html with the model name as a parameter
-
-            To do in gallery.html:
-             - add filter UI and sort UI
-                - tags, also year, has cp, has video, etc
-             - make the models appear in neat columns
-             - missing hp sheep
-
-            Note: sometimes the json files don't update because the old versions are cached in the local browser. make sure the deployed version doesn't have this issue. for testing, use incognito
-        */
-        //helper
         async function fetchFile(filename) {
             return fetch(filename)
                 .then(response => response.json())
@@ -276,7 +260,7 @@
             }
         }
         
-        async function search(tags=[],displayCP=false,sort="date"){
+        async function search(tags=[],sort="date"){
             console.log("refreshing search. searching for:",tags)
             const modelGallery = document.getElementById('model_gallery');
             function filter(model,tags){
@@ -290,6 +274,10 @@
                 return model.name != ""
             }
 
+            displayCP = document.getElementById("displayCP").checked;
+            if(displayCP){
+                tags.push("has_cp");
+            }
             model_data = await fetchFile("model_data.json");
             queue = (await Promise.all(model_data.filenames.map(async filename => {
                 const model = await fetchFile("src/models/" + filename);
@@ -297,29 +285,30 @@
                     return [filename, model];
                 }
             }))).filter(item => item !== undefined);
-            // queue = []
-            // for (const filename of model_data.filenames){
-            //     model = await fetchFile("src/models/"+filename);
-            //     if(filter(model,tags)){
-            //         queue.push([filename,model])
-            //     }
-            // }
             display(model_sort(queue),displayCP);
         }
-        (async function(){
-            model_data = await fetchFile("model_data.json");
-            dropdown = document.getElementById("tag_filter");
-            for (const tag of model_data.tags){
-                const option = document.createElement("option");
-                option.value = tag[0];
-                option.textContent = tag[0] + " ("+tag[1]+")";
-                dropdown.appendChild(option);
-            }
-        })();
 
-        function searchBar(){
-            const searchBar = document.getElementById("searchBar");
-            search([searchBar.value]);
+        async function searchBar(){
+            const query = document.getElementById("searchBar").value;
+            console.log("refreshing search. searching by name for: ",query)
+            const modelGallery = document.getElementById('model_gallery');
+            function filter(model,filename,query){
+                if (model.name.toLowerCase().includes(query.toLowerCase())
+                    || filename.toLowerCase().includes(query.toLowerCase())){
+                    return model.name != ""
+                } else{
+                    return false;
+                }
+            }
+
+            model_data = await fetchFile("model_data.json");
+            queue = (await Promise.all(model_data.filenames.map(async filename => {
+                const model = await fetchFile("src/models/" + filename);
+                if (filter(model,filename, query)) {
+                    return [filename, model];
+                }
+            }))).filter(item => item !== undefined);
+            display(model_sort(queue));
             //TODO: add search for model name
         }
         
@@ -333,14 +322,29 @@
         }
 
         function applyAdvancedSearch() {
-            var tag1 = document.getElementById('tag1').checked;
-            var tag2 = document.getElementById('tag2').checked;
-            // Get the values of other checkboxes as needed...
-            // Perform the search with the selected tags...
-            document.getElementById('advancedSearch').style.display = 'none';
+            var checkboxes = document.querySelectorAll('#checkboxes input[type=checkbox]:checked')
+            var radios = document.querySelectorAll('#years input[type=radio]:checked');
+            checkboxes = [...checkboxes]
+            radios = [...radios]
+            radios.forEach(radio => checkboxes.push(radio));
+            var tags = [];
+            checkboxes.forEach(function(checkbox) {
+                tags.push(checkbox.id);
+            });
+            search(tags)
+        }     
+        
+        function resetFilters(){
+            var checkboxes = document.querySelectorAll('#checkboxes input[type=checkbox]:checked');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+            var radios = document.querySelectorAll('#years input[type=radio]:checked');
+            radios.forEach(radio => {
+                radio.checked = false;
+            });
+            document.getElementById("searchBar").value = "";
         }
-        
-        
         var search_tags = [];
 
         function addTag(tag,displayCP=false) {
@@ -369,11 +373,11 @@
         <div id="navbar">
             <!-- later, make these as drop down menus for subpages -->
             <!-- See how lang does it -->
-            <a href="gallery.html"><button>Gallery</button></a>
-            <a href="engineering.html"><button>Engineering</button></a>
-            <a href="learn.html"><button>Learn</button></a>
-            <a href="about.html"><button>About</button></a>
-            <a href="business.html"><button>Business</button></a>
+            <a href="gallery.html"><button class="button2">Gallery</button></a>
+            <a href="engineering.html"><button class="button2">Engineering</button></a>
+            <a href="learn.html"><button class="button2">Learn</button></a>
+            <a href="about.html"><button class="button2">About</button></a>
+            <a href="business.html"><button class="button2">Business</button></a>
             
         </div>
         </div>
@@ -389,34 +393,167 @@
         </div>
         <div id="advancedSearch" class="modal">
             <div class="modal-content">
-                <!-- TODO: design the advanced search window  
-                    Search bar + button
-                    Display by photo vs display by CP (toggle switch)
-                    or vs and? or always do and
-                    
-                    Search by subject (columns of checkboxes)
-                    Search by design style (columns of checkboxes)
-                    Search by years (columns of radio check boxes)
-                    Search by other tags (columns of checkboxes)
-                -->
                 <span class="close" onclick="toggleAdvancedSearch()">&times;</span>
-                <input type="text" id="searchBar" placeholder="Search...">
-                <button onclick="searchBar()">Search</button>
-                <label>
-                    <input type="checkbox" id="tag1" value="tag1">
-                    Tag 1
-                </label>
-                <select id="tag_filter" onchange="search([this.value])">
-                    <option value="">All</option>
-                </select>
-                <label>
-                    <input type="checkbox" id="tag2" value="tag2">
-                    Tag 2
-                </label>
-                <button onclick="applyAdvancedSearch()">Apply</button>
+                <div class="sidediv">
+                    <div style="width:40%">
+                        <label for="searchBar">Search by model name: </label>
+                        <input style="height:40px" type="text" id="searchBar" placeholder="Search...">
+                        <button onclick="searchBar();toggleAdvancedSearch()">Search</button>
+                    </div>
+                    <div style="width:30%">
+                        <label for="tag_filter">Search through all tags:</label>
+                        <select id="tag_filter" style="height:40px" onchange="search([this.value]);toggleAdvancedSearch()">
+                            <option value="">All</option>
+                            <!-- somewhere in js, the rest of the tags get added -->
+                        </select>
+                    </div>
+                    <div style="width:20%">
+                        <label for="displayCP">Display crease patterns:</label>
+                        <input type="checkbox" id="displayCP" name="displayCP">
+                    </div>
+                </div>
+                <br><hr><br>
+                <div id="checkboxes" class="sidediv">
+                    <div id="subjects" style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Subject type:</p>
+                        <!-- <input type="checkbox" id="animal">
+                        <label for="animal">animal</label> -->
+                    </div>
+                    <div id="style"style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Design style:</p>
+                        <!-- <input type="checkbox" id="2024">
+                        <label for="2024">2024</label> -->
+                    </div>
+                    <div id="years"style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Year:</p>
+
+                    </div>
+                    <div id="other"style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Other tags:</p>
+                        <!-- <input type="checkbox" id="2024">
+                        <label for="2024">2024</label> -->
+                    </div>
+                </div>
                 <br>
-                <br>
-                <p>(this functionality is still under construction)</p>
+                <div style="text-align: center;">
+                    <button onclick="applyAdvancedSearch();toggleAdvancedSearch()">Apply filters</button>
+                    <button onclick="resetFilters()">Reset filters</button>
+                </div>
+                <script>
+                    //populate the tag filter dropdown, as well as checkboxes
+                    (async function(){
+                        model_data = await fetchFile("model_data.json");
+                        dropdown = document.getElementById("tag_filter");
+                        for (const tag of model_data.tags){
+                            const option = document.createElement("option");
+                            option.value = tag[0];
+                            option.textContent = tag[0].replace("_"," ") + " ("+tag[1]+")";
+                            dropdown.appendChild(option);
+                        }
+                        //populate the checkboxes
+                        for (var i=2003; i<2030; i++){ //will be self sustaining until 2030
+                            year = i+''
+                            if (model_data.tags.some(tag => tag[0] == year)){
+                                //add a checkbox with a label
+                                const checkbox = document.createElement("input");
+                                checkbox.type = "radio";
+                                checkbox.id = year;
+                                checkbox.name = "year"
+
+                                const label = document.createElement("label");
+                                label.for = year;
+                                label.textContent = ` ${year} (${model_data.tags.find(tag => tag[0] === year)[1]})`;
+
+                                const div = document.createElement("div");
+                                div.appendChild(checkbox);
+                                div.appendChild(label);
+
+                                document.getElementById("years").appendChild(div);
+                            }
+                        }
+
+                        const design_styles = ["bp","hp","22.5","tilted_grid","15","uniaxial","nonuniaxial","multiaxial","color_change","2d","3d","tessellation","action"]
+                        // Create an array of objects where each object represents a tag and its frequency
+                        let tagData = design_styles
+                            .map(style => {
+                                let tag = model_data.tags.find(tag => tag[0] === style);
+                                return tag ? { style: style, frequency: tag[1] } : null;
+                            })
+                            .filter(tag => tag !== null);  // Remove null values
+                        // Sort the array by frequency in descending order
+                        tagData.sort((a, b) => b.frequency - a.frequency);
+                        // Loop through the sorted array to create the divs
+                        for (const data of tagData) {
+                            // Add a checkbox with a label
+                            const checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = data.style;
+                            checkbox.name = "style";
+
+                            const label = document.createElement("label");
+                            label.for = data.style;
+                            label.textContent = ` ${data.style.replace("_", " ")} (${data.frequency})`;
+
+                            const div = document.createElement("div");
+                            div.appendChild(checkbox);
+                            div.appendChild(label);
+
+                            document.getElementById("style").appendChild(div);
+                        }
+                        
+                        const subjects = ["animal","human","object","bird","character","dinosaur","plant","multi subject","skeleton","sea_life","flower","reptile","fish","food","mammal","insect","fantasy"]
+                        // Create an array of objects where each object represents a tag and its frequency
+                        let tagDataSubjects = subjects
+                            .map(subject => {
+                                let tag = model_data.tags.find(tag => tag[0] === subject);
+                                return tag ? { subject: subject, frequency: tag[1] } : null;
+                            })
+                            .filter(tag => tag !== null);  // Remove null values
+                        // Sort the array by frequency in descending order
+                        tagDataSubjects.sort((a, b) => b.frequency - a.frequency);
+                        // Loop through the sorted array to create the divs
+                        for (const data of tagDataSubjects) {
+                            // Add a checkbox with a label
+                            const checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = data.subject;
+                            checkbox.name = "subject";
+                            const label = document.createElement("label");
+                            label.for = data.subject;
+                            label.textContent = ` ${data.subject.replace("_", " ")} (${data.frequency})`;
+                            const div = document.createElement("div");
+                            div.appendChild(checkbox);
+                            div.appendChild(label);
+                            document.getElementById("subjects").appendChild(div);
+                        }
+
+                        const otherTags = model_data.tags.filter(tag => {
+                            const tagValue = tag[0];
+                            return !design_styles.includes(tagValue) && !subjects.includes(tagValue) && !(/^\d+$/.test(tagValue));
+                        });
+
+                        // Sort the other tags by frequency in descending order
+                        otherTags.sort((a, b) => b[1] - a[1]);
+
+                        for (const tag of otherTags) {
+                            const checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = tag[0];
+                            checkbox.name = "other";
+
+                            const label = document.createElement("label");
+                            label.for = tag[0];
+                            label.textContent = ` ${tag[0].replace("_", " ")} (${tag[1]})`;
+
+                            const div = document.createElement("div");
+                            div.appendChild(checkbox);
+                            div.appendChild(label);
+
+                            document.getElementById("other").appendChild(div);
+                        }
+                    })();
+                </script>
+                </script>
             </div>
         </div>
         <div id="model_count">

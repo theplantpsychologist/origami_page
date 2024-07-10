@@ -32,8 +32,13 @@ body {
 #navbar a {
     margin-right: 10px;
 }
-
-button {
+.button2 {
+    background-color: transparent; color: #333; border: 1px solid #333; cursor: pointer; font-size: 16px; padding: 5px 10px;
+}
+.button2:hover {
+    background-color:#ddd
+}
+button { 
     background-color: #333;
     color: white;
     padding: 10px 20px;
