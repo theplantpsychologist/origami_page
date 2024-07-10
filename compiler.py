@@ -135,6 +135,8 @@ def build_html_files():
                     except:
                         print("ERROR: "+filename + " has no date")
                     
+                    # Find the element with id "title" and replace the text with the "name" from the json dictionary
+                    html_content = html_content.replace('<title>Document</title>', f'<title>{data["name"]}</title>')
 
                     #fill in model description
                     html_content = html_content.replace('<p id="description">description</p>', f'<p id="description">{data["description"]}</p>')
