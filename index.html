@@ -111,19 +111,15 @@
         <div id="navbar">
             <!-- later, make these as drop down menus for subpages -->
             <!-- See how lang does it -->
-            <a href="gallery.html"><button>Gallery</button></a>
-            <a href="engineering.html"><button>Engineering</button></a>
-            <a href="learn.html"><button>Learn</button></a>
-            <a href="about.html"><button>About</button></a>
-            <a href="business.html"><button>Business</button></a>
+            <a href="gallery.html"><button class="button2">Gallery</button></a>
+            <a href="engineering.html"><button class="button2">Engineering</button></a>
+            <a href="learn.html"><button class="button2">Learn</button></a>
+            <a href="about.html"><button class="button2">About</button></a>
+            <a href="business.html"><button class="button2">Business</button></a>
             
         </div>
     </div>
 
-    
-    <!-- <div style="text-align: center;margin-top:50px">
-        <img src="img/hero1.svg" style="width:90%;margin-bottom:0px;padding:0px"alt="">
-    </div> -->
     <div id="fadeOnScroll" style="width:100%;text-align: center; margin-top: -100vh; position:fixed;z-index:-1">
         <img src="img/hero1.svg" style="margin-top:80px; width: 75%; border-radius: 15px; z-index:-1" alt="">
     </div>
@@ -136,13 +132,6 @@
     </script>
     <div id="wrapper">
         <div id="home_gallery_preview" style="display: flex; align-items: center;">
-            <div class="description" style="width: 33%;">
-                <h2>Origami Artworks</h2>
-                <br>
-                <p>Browse through 100+ original designs, including crease patterns, model backstories, and design notes.</p>
-                <br>
-                <a href="gallery.html"><button>Full gallery</button></a>
-            </div>
             <div id="gallery_preview"class="preview" class="carousel" style="width: 66%;">
                 <button id="carousel-prev" onclick="changeImage(-1)"><</button>
                 <button id="carousel-next" onclick="changeImage(1)">></button>
@@ -158,6 +147,14 @@
                 <img class = "carousel-image inactive"src="src/thumbnails/stone golems-5.jpg" alt="">
                 <img class = "carousel-image inactive"src="src/photos/shepherd-0126.png" alt="">
                 <img class = "carousel-image inactive"src="src/photos/dragon-9838.png" alt="">
+            </div>
+            <div style="width:2%"></div>
+            <div class="description" style="width: 33%;">
+                <h2>Origami Artworks</h2>
+                <br>
+                <p>Browse through 100+ original designs, including crease patterns, model backstories, and design notes.</p>
+                <br>
+                <a href="gallery.html"><button>Full gallery</button></a>
             </div>
         </div>
         <script>
@@ -210,13 +207,9 @@
             }
         </script>
         <br>
-        <hr>
+        <!-- <hr> -->
         <br>
         <div id="home_engineering_preview" style="display: flex; align-items: center;">
-            <div class="preview" style="width:66%;">
-                <a href="https://web.mit.edu/wongb/www/transitions-implementation/"><img src="img/5 to n.gif" alt="" style="width: 100%;"></a>
-            </div>
-            <div style="width:3%"></div>
             <div class="description" style="width:33%">
                 <h2>Engineering</h2>
                 <br>
@@ -224,36 +217,42 @@
                 <br>
                 <a href="engineering.html"><button>See projects</button></a>
             </div>
+            <div class="preview" style="width:66%;">
+                <img src="engineering/img/folding circuit.jpg" alt="">
+                <!-- <a href="https://web.mit.edu/wongb/www/transitions-implementation/"><img src="img/5 to n.gif" alt="" style="width: 100%;"></a> -->
+            </div>
         </div>
         <br>
-        <hr>
+        <!-- <hr> -->
         <br>
         <div id="home_learn_preview" style="display: flex; align-items: center;">
+            <div class="preview">
+                <img src="src/cps/puppy cp.svg" alt="" style="width: 100%;">
+            </div>
+            <div style="width:2%"></div>
             <div class="description">
                 <h2>Learn</h2>
                 <br>
-                <p>Resources I've created for you to learn and improve at origami</p>
+                <p>Interested in origami? I've created a variety of resources to help you learn how to get started in origami, and then come up with your own models.</p>
                 <br>
-                <a href="learn.html"><button>Learn more</button></a>
-            </div>
-            <div class="preview">
-                <img src="img/5 to n.gif" alt="" style="width: 100%;">
+                <a href="learn.html"><button>View resources</button></a>
             </div>
         </div>
         <br>
-        <hr>
+        <!-- <hr> -->
         <br>
-        <div id="business_preview">
-            <h2>commission me</h2>
-            <p>these are the things i do:
-                <ul>
-                    <li>design stuff</li>
-                    <li>teach stuff</li>
-                    <li>for advertising: social media audience</li>
-                </ul>
-                (big div with contact field)
-            </p>
-            <a href="contact.html"> <button>Contact me</button></a>
+        <div id="business_preview" class="sidediv">
+            <div class="description" style="width:40%;margin-left:10px">
+                <h2>Commission me</h2>
+                <br>
+                <p>Collaborate with me to promote your business, or request a custom original designs of anything you could imagine. Just ask!</p>
+                <br>
+                <a href="business.html"> <button>Further details</button></a>
+            </div>
+            <div style="width:2%"></div>
+            <div class="preview" style="width:60%">
+                <img src="img/pfp-2.jpg" alt="">
+            </div>
         </div>
     </div>
     <div id = "footer">

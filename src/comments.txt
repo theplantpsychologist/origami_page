@@ -12,12 +12,9 @@ TODO models (template):
 
 
 TODO home (index):
- - add hero section
-   - big image: left side cp, right side model, and then opacity fade the boundary between the two. use a model like the angel, or maybe journey. Overlay text: Engineering + art = origami. put it above the wrapper.
- - add appropriate images for engineering, learn, and business
  - carousel sliding animation
  - add google analytics
- - navbar dropdowns, and change button colors
+ - navbar dropdowns
  - add resume somewhere (need to update resume anyways)
 
 TODO contact:
