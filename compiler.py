@@ -74,6 +74,12 @@ def compress_photos():
         photo_path = os.path.join(photo_dir, filename)
         thumbnail_path = os.path.join(thumbnail_dir, filename)
 
+        #TODO: if there already exists a thumbnail, continue
+        # Check if there already exists a thumbnail, continue
+        if os.path.exists(thumbnail_path):
+            # print(f"Skipped {filename} (thumbnail already exists).")
+            continue
+
         # Check if the file is an image
         if not os.path.isfile(photo_path) or not filename.lower().endswith(('.jpg', '.jpeg', '.png')):
             print(f"skipped {filename}, not an image")
@@ -189,5 +195,5 @@ def build_html_files():
     print("All HTML files built successfully.")
 if __name__ == "__main__":
     get_filenames()
-    #compress_photos()
+    compress_photos()
     build_html_files()

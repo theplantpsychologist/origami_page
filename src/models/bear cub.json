@@ -1,0 +1,31 @@
+{
+    "name": "Bear cub",
+    "date": "2024-06-27",
+    "photo": [
+        "bear cub front.JPG",
+        "bear cub side.jpg",
+        "bear cub back.JPG"
+    ],
+    "tags": [
+        "hp",
+        "3d",
+        "cute",
+        "animal",
+        "mammal",
+        "color_change",
+        "nonuniaxial",
+        "has_cp",
+        "2024"
+    ],
+    "description": "",
+    "cp": [
+        "bear cub cp.png"
+    ],
+    "video": "",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "related": ""
+}
