@@ -194,6 +194,6 @@ def build_html_files():
                     html_file.truncate()
     print("All HTML files built successfully.")
 if __name__ == "__main__":
-    get_filenames()
-    compress_photos()
+    # get_filenames()
+    # compress_photos()
     build_html_files()
