@@ -1,0 +1,31 @@
+{
+    "name": "Otters",
+    "date": "2024-07-25",
+    "photo": [
+        "otters.png"
+    ],
+    "tags": [
+        "cute",
+        "mammal",
+        "sea_life",
+        "multi_subject",
+        "color_change",
+        "nonuniaxial",
+        "bp",
+        "top_comment",
+        "has_cp",
+        "has_video",
+        "2024"
+    ],
+    "description": "Two otters holding hands",
+    "cp": [
+        "otters cp.png"
+    ],
+    "video": "https://youtube.com/shorts/WVDvx-CYCzU",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "related": ""
+}
