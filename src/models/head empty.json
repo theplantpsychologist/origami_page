@@ -14,7 +14,8 @@
         "3d",
         "collaboration",
         "has_cp",
-        "2024"
+        "2024",
+        "has_video"
     ],
     "description": "Designed in collaboration with <a href='https://www.obb.design/crease-patterns/head-empty-32x32-grid'>Boice Wong</a>",
     "cp": [
