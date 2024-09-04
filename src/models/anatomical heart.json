@@ -1,0 +1,27 @@
+{
+    "name": "Anatomical heart",
+    "date": "2024-07-30",
+    "photo": [
+        "anatomical heart.jpg"
+    ],
+    "tags": [
+        "bp",
+        "object",
+        "color_change",
+        "top_comment",
+        "has_cp",
+        "has_video",
+        "2024"
+    ],
+    "description": "An anatomically correct heart. Part of the top comment series.",
+    "cp": [
+        "anatomical heart cp.jpg"
+    ],
+    "video": "https://youtube.com/shorts/sCaniFoEXjE?feature=share",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "related": ""
+}

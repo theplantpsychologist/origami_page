@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E38JJ1Z4B"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2E38JJ1Z4B');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life sized chair</title>
+    <link rel="stylesheet" type="text/css" href="../global_style.css">
+    <!-- style the page in general -->
+    <style>
+        #wrapper {
+            margin-top: 120px;
+            margin-bottom: 80px;
+            margin-left: 130px;
+            margin-right: 130px;
+        }
+        #name {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        #date {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+        #description, #cpdescription, #diagrams {
+            margin-bottom: 10px;
+            font-size:20
+        }
+
+        #tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid #000; /* Add a border */
+        }
+    </style>
+    <!-- style the photo carousel -->
+    <style>
+        #photos, #video, #cp {
+            /* margin-bottom: 200px; */
+            width: 100%;
+            height: 500px;
+            overflow: hidden;            
+            flex: 1 0 30%;
+            margin: 1em;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        #photos img, #video iframe, #cp img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        #video:empty, #cp:empty {
+            display: none;
+        }
+
+        .carousel-image {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-image.active {
+            display: block;
+        }
+        #photos button{
+            z-index: 100;
+        }
+        #carousel-prev{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #carousel-next{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var images 
+        var currentIndex
+        window.onload = function() {
+
+            images = Array.from(document.querySelectorAll('.carousel-image'));
+            console.log(images)
+            currentIndex = 0;
+
+            // Show the first image by default
+            images[currentIndex].classList.add('active');
+        }
+        window.changeImage = function changeImage(direction) {
+            // Hide the current image
+            images[currentIndex].classList.remove('active');
+
+            // Update the current index
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+
+            // Show the new image
+            images[currentIndex].classList.add('active');
+        }
+    </script>
+    <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white;">
+        <a id="logo_home" href="../index.html"><img src="../img/logo.svg" alt=""></a>
+        <div id="navbar">
+            <!-- later, make these as drop down menus for subpages -->
+            <!-- See how lang does it -->
+            <a href="../gallery.html"><button>Gallery</button></a>
+            <a href="../engineering.html"><button>Engineering</button></a>
+            <a href="../learn.html"><button>Learn</button></a>
+            <a href="../about.html"><button>About</button></a>
+            <a href="../business.html"><button>Business</button></a>
+            
+        </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <button onclick="window.location.href='../gallery.html'" style="background-color: transparent; color: #333; border: 1px solid #333; cursor: pointer; font-size: 16px; padding: 5px 10px;">Back to gallery</button>
+        <br><br>
+ 
+        <h1 id="name">Life sized chair</h1>
+        <p id="date">August 2024</p>
+        <p id="description">A fully functional chair (stool) that can support a person's weight. Folded from a 120cm square of 2-ply cardboard. Designed for a challenge as part of the top comment series.</p>
+        <div id="photos"><img class="carousel-image" src="../src/photos/chair thinker.jpg" alt="photo"><img class="carousel-image" src="../src/photos/chair.JPG" alt="photo"><button id="carousel-prev" onclick="changeImage(-1)"><</button><button id="carousel-next" onclick="changeImage(1)">></button>
+        </div>
+        <p id="cpdescription">The first image is the crease pattern--the second image is how to combine multiple sheets of cardboard into a larger square. The direction of the grain is important for the strength of the chair.</p>
+        <div id="cp"><img src="../src/cps/chair cp.png" alt="crease pattern"><img src="../src/cps/chair template.png" alt="crease pattern"></div>
+        <div id="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/mQGd-1B7jHU?feature=share?si=u_yWkDzkLtn0nOf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div id="diagrams"></div>
+        <div id="tags"><p>Tags: <a href="../gallery.html?tag=functional"><button class="button2 tag">functional</button></a><a href="../gallery.html?tag=top_comment"><button class="button2 tag">top_comment</button></a><a href="../gallery.html?tag=simple"><button class="button2 tag">simple</button></a><a href="../gallery.html?tag=has_cp"><button class="button2 tag">has_cp</button></a><a href="../gallery.html?tag=has_video"><button class="button2 tag">has_video</button></a><a href="../gallery.html?tag=2024"><button class="button2 tag">2024</button></a></p></div> 
+        <button onclick="window.location.href='../gallery.html'" class="button2">Back to gallery</button>
+<!-- TODO: right side bar will feature related models
+     TODO: make tags clickable links to the gallery, searching for models with that tag -->
+    </div>
+    <div id = "footer">
+        <div id="socials">
+            <div class = "social" >
+                <a href="https://www.instagram.com/theplantpsychologist/"><img src="../img/instagram.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://www.youtube.com/c/ThePlantPsychologist"><img src="../img/youtube.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://github.com/theplantpsychologist"><img src="../img/github.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://www.tiktok.com/@theplantpsychologist"><img src="../img/tiktok.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://twitter.com/brandon_w0ng"><img src="../img/X.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://discord.gg/AyQ3mNrkdr"><img src="../img/discord.png" alt=""></a>
+            </div>
+
+            <div class="social">
+                <a href="https://www.linkedin.com/in/brandonwong1/"><img src="../img/linkedin.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="mailto:theplantpsychologist@gmail.com"><img src="../img/email.png" alt=""></a>
+            </div>
+        </div>
+        <p>©2024 Brandon Wong. All rights reserved. <a href="https://github.com/theplantpsychologist/origami_page">Source code</a></p>
+    </div>
+</body>
+</html>

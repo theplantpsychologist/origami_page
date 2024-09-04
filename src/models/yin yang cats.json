@@ -1,0 +1,30 @@
+{
+    "name": "Yin yang cats",
+    "date": "2024-08-29",
+    "photo": [
+        "yin yang cats.png",
+        "yin yang cats hand.JPG"
+    ],
+    "tags": [
+        "cute",
+        "color_change",
+        "multi_subject",
+        "bp",
+        "animal",
+        "nonuniaxial",
+        "has_cp",
+        "has_video",
+        "2024"
+    ],
+    "description": "A yin yang formed by a pair of sleeping kittens. Designed as part of the top comment series.",
+    "cp": [
+        "yin yang cats cp.png"
+    ],
+    "video": "https://youtube.com/shorts/eNnyeWwf93s?feature=share",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "The crease pattern is mostly mirror symmetric, except that the two sides are flipped mountain-valley. This results in a model that is rotationally symmetric, except one side is white and the other is black.",
+    "related": ""
+}
