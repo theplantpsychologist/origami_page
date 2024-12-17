@@ -228,13 +228,15 @@
                         return false;
                     }
                 }
+                console.log(project)
+                // return true
                 return project.title != ""
             }
 
-            displayCP = document.getElementById("displayCP").checked;
-            if(displayCP){
-                tags.push("has_cp");
-            }
+            // displayCP = document.getElementById("displayCP").checked;
+            // if(displayCP){
+            //     tags.push("has_cp");
+            // }
             project_data = await fetchFile("engineering/project_data.json");
             queue = (await Promise.all(project_data.filenames.map(async filename => {
                 const project = await fetchFile("engineering/projects/" + filename);

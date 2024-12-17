@@ -21,6 +21,4 @@ osme transitions
 2.74 video/poster
 2.009 
  compliant mechanisms?
-
-TODO: add links to long descriptions
- - osme transitions
+ - 1.583 topology optimization
