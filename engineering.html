@@ -12,10 +12,320 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering</title>
-    <link rel="stylesheet" href="global_style.css">
+    <link rel="stylesheet" type="text/css" href="global_style.css">
+    <!-- user control box style -->
+    <style>
+        #user_controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        #user_controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: "Avenir", sans-serif;
+            border-radius: 5px;
+        }
+        #user_controls select {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            font-family: "Avenir", sans-serif;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #checkboxes {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    </style> 
+    <!-- body style -->
+    <style>
+        #wrapper {
+            margin-top: 150px;
+            margin-bottom:50px;
+            margin-left:10%;
+            margin-right:10%;
+            /* padding: 200px; */
+        }
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        #project_gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        #project_gallery .project {
+            flex: 1 0 40%;
+            margin: 1em 20;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .project a {
+            display: block;
+            width: 100%;
+            text-decoration:none;
+            color:inherit;
+            height: 100%;
+        }
+        .project a div{
+            cursor: pointer;
+        }
+        .project img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        #project_gallery .project {
+            flex: 1 0 40%;
+            margin: 1em 20px; /* Fixed margin value */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: background-color 0.3s ease; /* Add transition for background color */
+        }
+
+        #project_gallery .project:hover {
+            /* background-color: rgba(255, 255, 255, 0.5);  */
+            filter:brightness(0.9);
+        }
+    </style>
 </head>
 <body>
-    <div id="header">
+    <noscript>Please enable Javascript to load the projects on the page.</noscript>
+    <script>
+        async function fetchFile(filename) {
+            return fetch(filename)
+                .then(response => response.json())
+                // .catch(error => console.error('Error:', error));
+        }
+        
+        function project_sort(queue,order="date"){
+            //inputs a queue and sorts based on user input
+            //TODO: read user sorting input. a radio check box for date vs alphabetical, and then read that input and sort accordingly
+            if (order == "date"){
+                return queue.sort((a, b) => new Date(b[1].date) - new Date(a[1].date))
+            }
+            if (order =="alphabetical"){
+                return queue.sort((a, b) => a[1].name.localeCompare(b[1].name))
+            }
+        }
+
+        function display(queue){
+            const projectCount = document.getElementById('project_count_text');
+            projectCount.textContent = "Projects found: "+queue.length;
+            const projectGallery = document.getElementById('project_gallery');
+            while (projectGallery.firstChild) {
+                projectGallery.removeChild(projectGallery.firstChild);
+            }
+
+            for(const [filename,project] of queue){
+                const projectWrapper = document.createElement('div');
+                projectWrapper.classList.add('project');
+                projectGallery.appendChild(projectWrapper);
+
+                const projectLink = document.createElement('a');
+                projectLink.href = `engineering/${filename.slice(0, -5)}.html`;
+                projectWrapper.appendChild(projectLink);
+
+                const projectDiv = document.createElement('div');
+                projectDiv.classList.add('container');
+                projectLink.appendChild(projectDiv);
+
+                const projectTitle = document.createElement('h3');
+                projectTitle.textContent = project.title;
+                projectDiv.appendChild(projectTitle);
+
+                const projectDescription = document.createElement('p');
+                projectDescription.textContent = project.short_description;
+                projectDiv.appendChild(projectDescription);
+
+                const projectThumbnail = document.createElement('img');
+                projectThumbnail.src = "engineering/files/"+project.images[0];
+                projectThumbnail.alt = project.name;
+                projectDiv.appendChild(projectThumbnail);
+                // const projectName = document.createElement('p');
+                // projectName.classList.add('project-name');
+                // projectName.textContent = project.name;
+                // projectLink.appendChild(projectName);
+            }
+        }
+        
+        async function search(tags=[],sort="date"){
+            console.log("refreshing search. searching for:",tags)
+            const projectGallery = document.getElementById('project_gallery');
+            function filter(project,tags){
+                // check if all tags are present
+                //True: project gets added to queue
+                for(const tag of tags){
+                    if(!project.tags.includes(tag) && tag){
+                        return false;
+                    }
+                }
+                return project.title != ""
+            }
+
+            displayCP = document.getElementById("displayCP").checked;
+            if(displayCP){
+                tags.push("has_cp");
+            }
+            project_data = await fetchFile("engineering/project_data.json");
+            queue = (await Promise.all(project_data.filenames.map(async filename => {
+                const project = await fetchFile("engineering/projects/" + filename);
+                if (filter(project, tags)) {
+                    return [filename, project];
+                }
+            }))).filter(item => item !== undefined);
+            display(project_sort(queue),displayCP);
+        }
+
+        async function searchBar(){
+            const query = document.getElementById("searchBar").value;
+            console.log("refreshing search. searching by name for: ",query)
+            const projectGallery = document.getElementById('project_gallery');
+            function filter(project,filename,query){
+                if (project.name.toLowerCase().includes(query.toLowerCase())
+                    || filename.toLowerCase().includes(query.toLowerCase())){
+                    return project.name != ""
+                } else{
+                    return false;
+                }
+            }
+
+            project_data = await fetchFile("engineering/project_data.json");
+            queue = (await Promise.all(project_data.filenames.map(async filename => {
+                const project = await fetchFile("engineering/projects/" + filename);
+                if (filter(project,filename, query)) {
+                    return [filename, project];
+                }
+            }))).filter(item => item !== undefined);
+            display(project_sort(queue));
+            //TODO: add search for project name
+        }
+        
+        function toggleAdvancedSearch() {
+            var advancedSearch = document.getElementById('advancedSearch');
+            if (advancedSearch.style.display === 'none') {
+                advancedSearch.style.display = 'block';
+            } else {
+                advancedSearch.style.display = 'none';
+            }
+        }
+
+        function applyAdvancedSearch() {
+            var checkboxes = document.querySelectorAll('#checkboxes input[type=checkbox]:checked')
+            var radios = document.querySelectorAll('#years input[type=radio]:checked');
+            checkboxes = [...checkboxes]
+            radios = [...radios]
+            radios.forEach(radio => checkboxes.push(radio));
+            var tags = [];
+            checkboxes.forEach(function(checkbox) {
+                tags.push(checkbox.id);
+            });
+            search(tags)
+        }     
+        
+        function resetFilters(){
+            var checkboxes = document.querySelectorAll('#checkboxes input[type=checkbox]:checked');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+            var radios = document.querySelectorAll('#years input[type=radio]:checked');
+            radios.forEach(radio => {
+                radio.checked = false;
+            });
+            document.getElementById("searchBar").value = "";
+        }
+        var search_tags = [];
+
+        function addTag(tag,displayCP=false) {
+            if (!search_tags.includes(tag)) {
+                search_tags.push(tag);
+            }
+            search(search_tags,displayCP);
+        }
+
+        function removeTag(tag,displayCP=false) {
+            var index = search_tags.indexOf(tag);
+            if (index !== -1) {
+                search_tags.splice(index, 1);
+            }
+            search(search_tags,displayCP);
+        }
+
+        function setSearchTags(tags,displayCP=false) {
+            search_tags = tags;
+            search(search_tags,displayCP);
+        }
+    </script>
+
+    <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white; z-index: 100;">
         <a id="logo_home" href="index.html"><img src="img/logo.svg" alt=""></a>
         <div id="navbar">
             <!-- later, make these as drop down menus for subpages -->
@@ -27,12 +337,185 @@
             <a href="business.html"><button>Business</button></a>
             
         </div>
+        </div>
     </div>
-    <br><br><br>
     <div id="wrapper">
-        <h1>Engineering</h1>
-        <p>Beyond origami itself: academic research, software tools, metamaterials, and more </p>
-        <p><i>I'm still in the process of porting things over to this page. For now, please refer to my old website for <a href="https://web.mit.edu/wongb/www/origami_/other/programming.html">programming projects</a> and <a href="https://web.mit.edu/wongb/www/origami_/other/mechanical.html">mechanical projects</a>.</i></p>
+        <h1>Project portfolio</h1>
+        <!-- <div id="user_controls">
+            <button id="search_all" onclick="{setSearchTags([])}">All</button>
+            <button id="search_portfolio" onclick="setSearchTags(['portfolio'])">Portfolio</button>
+
+            <button onclick="toggleAdvancedSearch()">Advanced Search</button>
+
+        </div> -->
+        <div id="advancedSearch" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleAdvancedSearch()">&times;</span>
+                <div class="sidediv">
+                    <div style="width:40%">
+                        <label for="searchBar">Search by project name: </label>
+                        <input style="height:40px" type="text" id="searchBar" placeholder="Search...">
+                        <button onclick="searchBar();toggleAdvancedSearch()">Search</button>
+                    </div>
+                    <div style="width:30%">
+                        <label for="tag_filter">Search through all tags:</label>
+                        <select id="tag_filter" style="height:40px" onchange="search([this.value]);toggleAdvancedSearch()">
+                            <option value="">All</option>
+                            
+                        </select>
+                    </div>
+                    <div style="width:20%">
+                        <label for="displayCP">Display crease patterns:</label>
+                        <input type="checkbox" id="displayCP" name="displayCP">
+                    </div>
+                </div>
+                <br><hr><br>
+                <div id="checkboxes" class="sidediv">
+                    <div id="subjects" style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Subject type:</p>
+                        
+                    </div>
+                    <div id="style"style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Design style:</p>
+                        
+                    </div>
+                    <div id="years"style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Year:</p>
+
+                    </div>
+                    <div id="other"style="width:25%">
+                        <p style="text-align: left; margin-bottom: 10px;">Other tags:</p>
+                        
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button onclick="applyAdvancedSearch();toggleAdvancedSearch()">Apply filters</button>
+                    <button onclick="resetFilters()">Reset filters</button>
+                </div>
+                <script>
+                    //populate the tag filter dropdown, as well as checkboxes
+                    (async function(){
+                        project_data = await fetchFile("engineering/project_data.json");
+                        dropdown = document.getElementById("tag_filter");
+                        for (const tag of project_data.tags){
+                            const option = document.createElement("option");
+                            option.value = tag[0];
+                            option.textContent = tag[0].replace("_"," ") + " ("+tag[1]+")";
+                            dropdown.appendChild(option);
+                        }
+                        //populate the checkboxes
+                        for (var i=2003; i<2030; i++){ //will be self sustaining until 2030
+                            year = i+''
+                            if (project_data.tags.some(tag => tag[0] == year)){
+                                //add a checkbox with a label
+                                const checkbox = document.createElement("input");
+                                checkbox.type = "radio";
+                                checkbox.id = year;
+                                checkbox.name = "year"
+
+                                const label = document.createElement("label");
+                                label.for = year;
+                                label.textContent = ` ${year} (${project_data.tags.find(tag => tag[0] === year)[1]})`;
+
+                                const div = document.createElement("div");
+                                div.appendChild(checkbox);
+                                div.appendChild(label);
+
+                                document.getElementById("years").appendChild(div);
+                            }
+                        }
+
+                        const design_styles = ["bp","hp","22.5","tilted_grid","15","uniaxial","nonuniaxial","multiaxial","color_change","2d","3d","tessellation","action"]
+                        // Create an array of objects where each object represents a tag and its frequency
+                        let tagData = design_styles
+                            .map(style => {
+                                let tag = project_data.tags.find(tag => tag[0] === style);
+                                return tag ? { style: style, frequency: tag[1] } : null;
+                            })
+                            .filter(tag => tag !== null);  // Remove null values
+                        // Sort the array by frequency in descending order
+                        tagData.sort((a, b) => b.frequency - a.frequency);
+                        // Loop through the sorted array to create the divs
+                        for (const data of tagData) {
+                            // Add a checkbox with a label
+                            const checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = data.style;
+                            checkbox.name = "style";
+
+                            const label = document.createElement("label");
+                            label.for = data.style;
+                            label.textContent = ` ${data.style.replace("_", " ")} (${data.frequency})`;
+
+                            const div = document.createElement("div");
+                            div.appendChild(checkbox);
+                            div.appendChild(label);
+
+                            document.getElementById("style").appendChild(div);
+                        }
+                        
+                        const subjects = ["animal","human","object","bird","character","dinosaur","plant","multi subject","skeleton","sea_life","flower","reptile","fish","food","mammal","insect","fantasy"]
+                        // Create an array of objects where each object represents a tag and its frequency
+                        let tagDataSubjects = subjects
+                            .map(subject => {
+                                let tag = project_data.tags.find(tag => tag[0] === subject);
+                                return tag ? { subject: subject, frequency: tag[1] } : null;
+                            })
+                            .filter(tag => tag !== null);  // Remove null values
+                        // Sort the array by frequency in descending order
+                        tagDataSubjects.sort((a, b) => b.frequency - a.frequency);
+                        // Loop through the sorted array to create the divs
+                        for (const data of tagDataSubjects) {
+                            // Add a checkbox with a label
+                            const checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = data.subject;
+                            checkbox.name = "subject";
+                            const label = document.createElement("label");
+                            label.for = data.subject;
+                            label.textContent = ` ${data.subject.replace("_", " ")} (${data.frequency})`;
+                            const div = document.createElement("div");
+                            div.appendChild(checkbox);
+                            div.appendChild(label);
+                            document.getElementById("subjects").appendChild(div);
+                        }
+
+                        const otherTags = project_data.tags.filter(tag => {
+                            const tagValue = tag[0];
+                            return !design_styles.includes(tagValue) && !subjects.includes(tagValue) && !(/^\d+$/.test(tagValue));
+                        });
+
+                        // Sort the other tags by frequency in descending order
+                        otherTags.sort((a, b) => b[1] - a[1]);
+
+                        for (const tag of otherTags) {
+                            const checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.id = tag[0];
+                            checkbox.name = "other";
+
+                            const label = document.createElement("label");
+                            label.for = tag[0];
+                            label.textContent = ` ${tag[0].replace("_", " ")} (${tag[1]})`;
+
+                            const div = document.createElement("div");
+                            div.appendChild(checkbox);
+                            div.appendChild(label);
+
+                            document.getElementById("other").appendChild(div);
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+        <div id="project_count">
+            <p><i id="project_count_text"></i></p>
+        </div>
+        <div id="project_gallery">
+            <!-- project divs will be added here by the script -->
+        </div>    
+        <!-- <p><i>projects may take a few seconds to load, please be patient</i></p> -->
     </div>
     <div id = "footer">
         <div id="socials">
@@ -64,5 +547,21 @@
         </div>
         <p>©2024 Brandon Wong. All rights reserved. <a href="https://github.com/theplantpsychologist/origami_page">Source code</a></p>
     </div>
+
+    <script>
+        //default loadup
+        // let search_tags = [];
+        // search(search_tags);
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tag = urlParams.get('tag');
+            if (tag) {
+                search([tag]);
+            }
+            else {
+                search([]);
+            }
+        }; 
+    </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+{
+    "date": "2024-07-01",
+    "title": "Algorithmic transitions between parallel pleats",
+    "collaborators": [
+        "Erik Demaine"
+    ],
+    "short_description": "A generalized algorithm for ridge level shifters, submitted and presented to 8OSME",
+    "long_description": "A generalized algorithm for ridge level shifters, submitted and presented to 8OSME. Implementation: https://web.mit.edu/wongb/www/transitions-implementation/",
+    "link": "",
+    "pdf": [
+        "transitions paper.pdf",
+        "transitions slides.pdf"
+    ],
+    "video": "https://youtu.be/hshLzohvMWc",
+    "images": [
+        "transitions image.svg"
+    ],
+    "thumbnail": "",
+    "tags": [
+        "research",
+        "origami",
+        "computer_science",
+        "theoretical",
+        "2024"
+    ]
+}

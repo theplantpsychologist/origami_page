@@ -1,0 +1,26 @@
+../engineering.html is the home page for the projects portfolio
+
+in /engineering,
+ - pages go directly into the folder
+ - images, pdfs, other media go in /files
+ - json files to put everything together go in /projects
+
+Projects to add:
+ - circle jig
+folding circuits
+ - precreasing device
+ - piano
+ - levicircuits
+2.007 robot
+orikanji
+desk pet
+2.008 yoyos
+2.671 paper/poster 
+osme hp
+osme transitions
+2.74 video/poster
+2.009 
+ compliant mechanisms?
+
+TODO: add links to long descriptions
+ - osme transitions

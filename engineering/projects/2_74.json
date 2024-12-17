@@ -1,0 +1,26 @@
+{
+    "date": "2024-12-01",
+    "title": "Stairmaster",
+    "collaborators": [
+        "Andy Dequin",
+        "Brenda Fernandez",
+        "Seigo Hayami"
+    ],
+    "short_description": "A bipedal robot for 2.74 (bio-inspired robotics) to investigate the effect of incline angle and step height on climbing efficiency",
+    "long_description": "",
+    "link": "",
+    "pdf": "2.74 poster.pdf",
+    "video": "2.74 video.MOV",
+    "images": [
+        "2.74 CAD.png",
+        "2.74 photo.png"
+    ],
+    "thumbnail": "",
+    "tags": [
+        "class_project",
+        "robotics",
+        "controls",
+        "measurement",
+        "2024"
+    ]
+}

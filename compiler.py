@@ -249,5 +249,5 @@ def build_html_files():
 
 if __name__ == "__main__":
     get_filenames()
-    compress_photos()
-    build_html_files()
+    # compress_photos()
+    # build_html_files()

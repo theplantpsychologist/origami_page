@@ -1,8 +1,21 @@
 {
     "date": "2022-07-01",
-    "title": "Reconfigurable Circuit",
-    "description": "A prototype circuit made of copper pads and traces on paper, that when folded in different configurations, reconfigures the circuit to turn LEDs on and off.",
-    "link": "https://youtu.be/lpm9d1AlXk8?si=m3FqQCkUMtMSqsB_",
-    "thumbnail":"folding circuit.jpg",
-    "tags":[] 
+    "title": "Folding reconfigurable circuits",
+    "collaborators": [],
+    "short_description": "A prototype of a printed circuit that reroutes when the substrate is folded.",
+    "long_description": "A prototype of a printed circuit that reroutes when the substrate is folded. In this example, the circuit that wires two LEDs has 5 possible configurations: 1) both LEDs in series, 2) both LEDs in parallel, 3) one LED on, 4) the other LED on, and 5) both LEDs off (unfolded state). The circuit is made of copper tape on paper with an insulating tape covering the traces between the contact pads. <br><br>The first image shows a photo of the circuit. The second shows the crease patterns and resulting circuit schematics of the first 4 configurations. Yellow lines represent the copper tape traces, yellow circles represent the contact pads, and purple lines represent connections created by folding. The video below shows a rough demo of the circuit being folded between the different configurations. <br><br>This project was created on a whim and was not for any particular class or research project.  ",
+    "link": "",
+    "pdf": "",
+    "video": "https://youtu.be/lpm9d1AlXk8",
+    "images": [
+        "circuit photo.png",
+        "circuit details.png"
+    ],
+    "thumbnail": "",
+    "tags": [
+        "research",
+        "electronics",
+        "origami",
+        "2022"
+    ]
 }
