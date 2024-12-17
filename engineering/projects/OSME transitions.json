@@ -5,7 +5,7 @@
         "Erik Demaine"
     ],
     "short_description": "A generalized algorithm for ridge level shifters, submitted and presented to 8OSME",
-    "long_description": "A generalized algorithm for ridge level shifters, submitted and presented to 8OSME. An interactive implementation of this algorithm can be viewed <a href='https://web.mit.edu/wongb/www/transitions-implementation/'>here</a>.",
+    "long_description": "A generalized algorithm for ridge level shifters, submitted and presented to 8OSME. This algorithm generates the transition crease pattern in linear time and also has implications for solving dense bouncing. An interactive implementation of this algorithm can be viewed <a href='https://web.mit.edu/wongb/www/transitions-implementation/'>here</a>.",
     "link": "https://web.mit.edu/wongb/www/transitions-implementation/",
     "pdf": [
         "transitions paper.pdf",
