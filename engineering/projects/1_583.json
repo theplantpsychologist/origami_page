@@ -1,0 +1,20 @@
+{
+    "date": "2024-12-01",
+    "title": "Topology optimization of compliant mechanisms using truss and frame elements",
+    "collaborators": [],
+    "short_description": "Final project for 1.583 (Topology Optimization)",
+    "long_description": "Final project for 1.583 (Topology Optimization). Used numpy and scipy to optimize frame and truss element ground structures for designing compliant mechanisms.",
+    "link": "",
+    "pdf": "1.583 poster.pdf",
+    "video": "1.583 video.MOV",
+    "images": [
+        "1.583 fig.png"
+    ],
+    "thumbnail": "",
+    "tags": [
+        "2024",
+        "class_project",
+        "computer_science",
+        "theoretical"
+    ]
+}

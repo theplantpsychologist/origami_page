@@ -6,10 +6,10 @@ in /engineering,
  - json files to put everything together go in /projects
 
 Projects to add:
- - circle jig
+circle jig
 folding circuits
- - precreasing device
- - piano
+precreasing device
+piano
  - levicircuits
 2.007 robot
 orikanji
@@ -21,4 +21,5 @@ osme transitions
 2.74 video/poster
 2.009 
  compliant mechanisms?
- - 1.583 topology optimization
+egg gripper
+1.583 topology optimization

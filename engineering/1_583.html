@@ -1,0 +1,229 @@
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E38JJ1Z4B"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2E38JJ1Z4B');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topology optimization of compliant mechanisms using truss and frame elements</title>
+    <link rel="stylesheet" type="text/css" href="../global_style.css">
+    <!-- style the page in general -->
+    <style>
+        #wrapper {
+            margin-top: 120px;
+            margin-bottom: 80px;
+            margin-left: 130px;
+            margin-right: 130px;
+        }
+        #title {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        #date,#collaborators {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 10px;
+        }
+        #description, #cpdescription, #diagrams {
+            margin-bottom: 10px;
+            font-size:20
+        }
+
+        #tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid #000; /* Add a border */
+        }
+    </style>
+    <!-- style the photo carousel -->
+    <style>
+        #images, #video,#pdf {
+            /* margin-bottom: 200px; */
+            width: 100%;
+            height: 500px;
+            overflow: hidden;            
+            flex: 1 0 30%;
+            margin: 1em;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        #pdf_wrapper{
+            display:flex
+        }
+        #pdf{
+            height:100%;
+        }
+
+        /* #pdf {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;            
+            flex: 1 0 30%;
+            margin: 1em;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        } */
+        #images img, #video iframe video, #cp img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        #video:empty, #cp:empty {
+            display: none;
+        }
+
+        .carousel-image {
+            display: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-image.active {
+            display: block;
+        }
+        #images button{
+            z-index: 100;
+        }
+        #carousel-prev{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #carousel-next{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var images 
+        var currentIndex
+        window.onload = function() {
+
+            images = Array.from(document.querySelectorAll('.carousel-image'));
+            console.log(images)
+            currentIndex = 0;
+
+            // Show the first image by default
+            images[currentIndex].classList.add('active');
+        }
+        window.changeImage = function changeImage(direction) {
+            // Hide the current image
+            images[currentIndex].classList.remove('active');
+
+            // Update the current index
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+
+            // Show the new image
+            images[currentIndex].classList.add('active');
+        }
+    </script>
+    <div id="header" style="position: fixed; top: 0; width: 100%; background-color: white;">
+        <a id="logo_home" href="../index.html"><img src="../img/logo.svg" alt=""></a>
+        <div id="navbar">
+            <!-- later, make these as drop down menus for subpages -->
+            <!-- See how lang does it -->
+            <a href="../gallery.html"><button>Gallery</button></a>
+            <a href="../engineering.html"><button>Engineering</button></a>
+            <a href="../learn.html"><button>Learn</button></a>
+            <a href="../about.html"><button>About</button></a>
+            <a href="../business.html"><button>Business</button></a>
+            
+        </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <button onclick="window.location.href='../engineering.html'" style="background-color: transparent; color: #333; border: 1px solid #333; cursor: pointer; font-size: 16px; padding: 5px 10px;">Back to projects</button>
+        <br><br>
+ 
+        <h1 id="title">Topology optimization of compliant mechanisms using truss and frame elements</h1>
+        <p id="date">Completed December 2024</p>
+        <p id="collaborators"></p>
+        <p id="description">Final project for 1.583 (Topology Optimization). Used numpy and scipy to optimize frame and truss element ground structures for designing compliant mechanisms.</p>
+        <div id="images"><img class="carousel-image" src="files/1.583 fig.png" alt="photo">
+        </div>
+        <div id="video"><video width="560" height="315" controls>
+                                        <source src="files/1.583 video.MOV" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                      </video></div>
+        <div id="pdf_wrapper"><div id="pdf"><embed src="files/1.583 poster.pdf" type="application/pdf" width="100%" height="600px" /></div></div>
+        <div id="tags"><p>Tags: <a href="../gallery.html?tag=2024"><button class="button2 tag">2024</button></a><a href="../gallery.html?tag=class_project"><button class="button2 tag">class_project</button></a><a href="../gallery.html?tag=computer_science"><button class="button2 tag">computer_science</button></a><a href="../gallery.html?tag=theoretical"><button class="button2 tag">theoretical</button></a></p></div> 
+        <button onclick="window.location.href='../engineering.html'" class="button2">Back to projects</button>
+<!-- TODO: right side bar will feature related models
+     TODO: make tags clickable links to the gallery, searching for models with that tag -->
+    </div>
+    <div id = "footer">
+        <div id="socials">
+            <div class = "social" >
+                <a href="https://www.instagram.com/theplantpsychologist/"><img src="../img/instagram.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://www.youtube.com/c/ThePlantPsychologist"><img src="../img/youtube.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://github.com/theplantpsychologist"><img src="../img/github.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://www.tiktok.com/@theplantpsychologist"><img src="../img/tiktok.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://twitter.com/brandon_w0ng"><img src="../img/X.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="https://discord.gg/AyQ3mNrkdr"><img src="../img/discord.png" alt=""></a>
+            </div>
+
+            <div class="social">
+                <a href="https://www.linkedin.com/in/brandonwong1/"><img src="../img/linkedin.png" alt=""></a>
+            </div>
+            <div class="social">
+                <a href="mailto:theplantpsychologist@gmail.com"><img src="../img/email.png" alt=""></a>
+            </div>
+        </div>
+        <p>©2024 Brandon Wong. All rights reserved. <a href="https://github.com/theplantpsychologist/origami_page">Source code</a></p>
+    </div>
+</body>
+</html>

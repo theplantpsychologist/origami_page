@@ -1,0 +1,21 @@
+{
+    "date": "2022-10-01",
+    "title": "Levicircuits",
+    "collaborators": [
+        "Marwa Alalawi"
+    ],
+    "short_description": "Reconfigurable circuits using acoustic levitation",
+    "long_description": "",
+    "link": "",
+    "pdf": "",
+    "video": "https://youtu.be/Hz7zYXZ_i4s",
+    "images": [
+        "levicircuits.png"
+    ],
+    "thumbnail": "",
+    "tags": [
+        "research",
+        "electronics",
+        "2022"
+    ]
+}
