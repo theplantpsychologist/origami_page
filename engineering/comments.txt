@@ -24,3 +24,6 @@ osme transitions
  compliant mechanisms?
 egg gripper
 1.583 topology optimization
+
+- metis stuff
+- teamlab charging pad?

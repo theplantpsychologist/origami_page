@@ -1,0 +1,176 @@
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E38JJ1Z4B"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2E38JJ1Z4B');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Wong's Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans">
+    <!-- floating header -->
+    <div id="header" class="fixed w-full bg-white shadow-md z-50">
+        <a id="logo_home" href="index.html"><img src="img/logo.svg" alt="" class="h-12"></a>
+        <div id="navbar" class="flex space-x-4">
+            <a href="gallery.html"><button class="btn">Gallery</button></a>
+            <a href="engineering.html"><button class="btn">Engineering</button></a>
+            <a href="learn.html"><button class="btn">Learn</button></a>
+            <a href="about.html"><button class="btn">About</button></a>
+            <a href="business.html"><button class="btn">Business</button></a>
+        </div>
+    </div>
+
+    <div id="fadeOnScroll" class="w-full text-center fixed z-0" style="margin-top: -100vh;">
+        <img src="img/hero1.svg" class="mt-20 w-3/4 rounded-lg" alt="">
+    </div>
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY;
+            var opacity = 1 - scrollPosition / 300; // Adjust 300 to control the rate of fading
+            document.getElementById('fadeOnScroll').style.opacity = opacity;
+        });
+    </script>
+    <div id="wrapper" class="mt-screen mb-12 mx-10">
+        <div id="home_gallery_preview" class="flex items-center">
+            <div id="gallery_preview" class="preview relative w-2/3 bg-gray-100 shadow-md rounded-lg overflow-hidden flex justify-around items-center">
+                <button id="carousel-prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white border-none cursor-pointer p-2 text-lg z-10" onclick="changeImage(-1)"><</button>
+                <button id="carousel-next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white border-none cursor-pointer p-2 text-lg z-10" onclick="changeImage(1)">></button>
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/rattlesnake-3.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/jsl hp.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/photos/turtle hp-0103.png" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/fallen angel.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/grim reaper final.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/cardinal.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/head empty-6.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/tgdogs.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/forest path-4.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/thumbnails/stone golems-5.jpg" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/photos/shepherd-0126.png" alt="">
+                <img class="carousel-image hidden w-full h-full object-cover absolute transition-transform duration-500" src="src/photos/dragon-9838.png" alt="">
+            </div>
+            <div class="w-1/12"></div>
+            <div class="description w-1/3">
+                <h2 class="text-2xl font-bold">Origami Artworks</h2>
+                <br>
+                <p>Browse through 100+ original designs, including crease patterns, model backstories, and design notes.</p>
+                <br>
+                <a href="gallery.html"><button class="btn">Full gallery</button></a>
+            </div>
+        </div>
+        <script>
+            var images 
+            var currentIndex
+            window.onload = function() {
+                // Randomize the order of images in gallery_preview
+                var galleryPreview = document.getElementById('gallery_preview');
+                images = Array.from(document.querySelectorAll('.carousel-image'))
+                console.log(images)
+
+                images.sort(function() {
+                    return 0.5 - Math.random();
+                });
+
+                images.forEach(function(image) {
+                    galleryPreview.appendChild(image);
+                });
+                
+                currentIndex = 0;
+    
+                // Show the first image by default
+                images[currentIndex].classList.add('block');
+                images[currentIndex].classList.remove('hidden');
+            }
+            window.changeImage = function changeImage(direction) {
+                // Hide the current image
+                images[currentIndex].classList.remove('block');
+                images[currentIndex].classList.add('hidden');
+                // Update the current index
+                currentIndex = (currentIndex + direction + images.length) % images.length;
+
+                // Show the new image
+                images[currentIndex].classList.remove('hidden')
+                images[currentIndex].classList.add('block');
+            }
+        </script>
+        <br>
+        <br>
+        <div id="home_engineering_preview" class="flex items-center">
+            <div class="description w-1/3">
+                <h2 class="text-2xl font-bold">Engineering</h2>
+                <br>
+                <p>Beyond paper folding: academic research, software tools, metamaterials, class projects, and more </p>
+                <br>
+                <a href="engineering.html"><button class="btn">See projects</button></a>
+            </div>
+            <div class="preview w-2/3">
+                <img src="engineering/files/circuit photo.png" alt="" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id="home_learn_preview" class="flex items-center">
+            <div class="preview w-2/3">
+                <img src="src/cps/puppy cp.svg" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="w-1/12"></div>
+            <div class="description w-1/3">
+                <h2 class="text-2xl font-bold">Learn</h2>
+                <br>
+                <p>Interested in origami? I've created a variety of resources to help you learn how to get started in origami, and then come up with your own models.</p>
+                <br>
+                <a href="learn.html"><button class="btn">View resources</button></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id="business_preview" class="flex items-center">
+            <div class="description w-2/5 ml-2">
+                <h2 class="text-2xl font-bold">Commission me</h2>
+                <br>
+                <p>Collaborate with me to promote your business, or request a custom original designs of anything you could imagine. Just ask!</p>
+                <br>
+                <a href="business.html"> <button class="btn">Further details</button></a>
+            </div>
+            <div class="w-1/12"></div>
+            <div class="preview w-3/5">
+                <img src="img/pfp-2.jpg" alt="" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="bg-gray-800 text-white py-4">
+        <div id="socials" class="flex justify-center space-x-4">
+            <div class="social">
+                <a href="https://www.instagram.com/theplantpsychologist/"><img src="img/instagram.png" alt="" class="h-8"></a>
+            </div>
+            <div class="social"></div>
+                <a href="https://www.youtube.com/c/ThePlantPsychologist"><img src="img/youtube.png" alt="" class="h-8"></a>
+            </div>
+            <div class="social">
+                <a href="https://github.com/theplantpsychologist"><img src="img/github.png" alt="" class="h-8"></a>
+            </div>
+            <div class="social"></div>
+                <a href="https://www.tiktok.com/@theplantpsychologist"><img src="img/tiktok.png" alt="" class="h-8"></a>
+            </div>
+            <div class="social"></div>
+                <a href="https://twitter.com/brandon_w0ng"><img src="img/X.png" alt="" class="h-8"></a>
+            </div>
+            <div class="social"></div>
+                <a href="https://discord.gg/AyQ3mNrkdr"><img src="img/discord.png" alt="" class="h-8"></a>
+            </div>
+            <div class="social"></div>
+                <a href="https://www.linkedin.com/in/brandonwong1/"><img src="img/linkedin.png" alt="" class="h-8"></a>
+            </div>
+            <div class="social">
+                <a href="mailto:theplantpsychologist@gmail.com"><img src="img/email.png" alt="" class="h-8"></a>
+            </div>
+        </div>
+        <p class="text-center mt-4">©2024 Brandon Wong. All rights reserved. <a href="https://github.com/theplantpsychologist/origami_page" class="text-blue-400">Source code</a></p>
+    </div>
+</body>
+</html>
