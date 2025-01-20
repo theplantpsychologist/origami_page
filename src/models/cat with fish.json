@@ -1,0 +1,31 @@
+{
+    "name": "Small cat with a large fish",
+    "date": "2024-12-22",
+    "photo": [
+        "cat with fish.png"
+    ],
+    "tags": [
+        "top_comment",
+        "22.5",
+        "multi_subject",
+        "color_change",
+        "animal",
+        "cute",
+        "mammal",
+        "sea_life",
+        "has_cp",
+        "has_video",
+        "2024"
+    ],
+    "description": "Designed as part of the top comment series.",
+    "cp": [
+        "cat with fish cp.png"
+    ],
+    "video": "https://youtube.com/shorts/cEhkhkb2eok",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "related": ""
+}

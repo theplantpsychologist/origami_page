@@ -1,0 +1,30 @@
+{
+    "name": "Owl with turning head",
+    "date": "2024-09-04",
+    "photo": [
+        "owl.png"
+    ],
+    "tags": [
+        "bird",
+        "animal",
+        "top_comment",
+        "3d",
+        "nonuniaxial",
+        "bp",
+        "cute",
+        "has_cp",
+        "has_video",
+        "2024"
+    ],
+    "description": "Designed as part of the top comment series. The head turns",
+    "cp": [
+        "owl cp.png"
+    ],
+    "video": "https://youtube.com/shorts/7UaI2QvE8X0",
+    "diagrams": [
+        "",
+        ""
+    ],
+    "cpdescription": "",
+    "related": ""
+}
