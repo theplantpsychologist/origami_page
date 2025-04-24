@@ -12,7 +12,14 @@
     ],
     "tags": [
         "has_cp",
-        "2025","reptile","portfolio","animal","hp","tessellation","top comment"
+        "2025",
+        "reptile",
+        "portfolio",
+        "animal",
+        "hp",
+        "tessellation",
+        "top_comment",
+        "has_video"
     ],
     "description": "The final model of the top comment series: a new hex pleated snake, with an entirely new diamond-shaped scale pattern. Although a huge pain to fold (the whole model took over 30 hours), these scales and other hex-pleating-specific tricks are the secret to this model's extremely high efficiency. The model was folded from a 2x3 rectangle, and from tongue to tail measures around 80% of the paper's long side. For reference, ryujin 3.5 as well as my previous hp snake are also around 80% efficiency, but this one only needs 2/3rds of the paper. Could these scales be used for a ryujin 4.0? Only time will tell.",
     "cp": [
